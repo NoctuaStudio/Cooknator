@@ -1,0 +1,47 @@
+body{
+    background-color: #FFECAA;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    background-color: #FCE38A;
+    display: flex;
+    flex-direction: row;
+    padding: 250px;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+input{
+    background-color: #FDEFBC;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button{
+    background-color: black;
+    color: #FFECAA;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    font-size: larger;
+}
+
+form{
+    flex-direction: column;
+}
+
+.div_img{
+    margin-right: 40px;
+}
+
+.div_flex{
+    display: flex;
+}
