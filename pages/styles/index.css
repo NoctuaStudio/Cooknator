@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-header{
+    color:#FFECAA;
+    background-color: black;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+}
