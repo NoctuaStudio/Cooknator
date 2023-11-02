@@ -1,13 +1,14 @@
 nomeCadastro = document.getElementById("nomeCadastro")
 invalid = document.getElementById("erroNomeCadastro")
 MensagemNomeCadastro = document.getElementById("MensagemNomeCadastro")
+let validações = [false, false, false, false, false, false]
 
 
 nomeCadastro.addEventListener("keyup", () => {
     const valor = nomeCadastro.value;
-    const isValid = valor.length >= 3 && valor.length <= 20;
+    validações[0] = valor.length >= 3 && valor.length <= 20;
     
-    if(isValid){
+    if(validações[0]){
         invalid.classList.remove("invalid-feedback")
         invalid.classList.add("valid-feedback")
         MensagemNomeCadastro.innerText = "Nome válido"
@@ -27,9 +28,9 @@ MensagemSobrenomeCadastro = document.getElementById("MensagemSobrenomeCadastro")
 
 sobrenomeCadastro.addEventListener("keyup", () => {
     const valor = sobrenomeCadastro.value;
-    const isValid = valor.length >= 3 && valor.length <= 20;
+    validações[1] = valor.length >= 3 && valor.length <= 20;
     
-    if(isValid){
+    if( validações[1]){
         erroSobrenomeCadastro.classList.remove("invalid-feedback")
         erroSobrenomeCadastro.classList.add("valid-feedback")
         MensagemSobrenomeCadastro.innerText = "Sobrenome válido"  
@@ -49,9 +50,9 @@ MensagemUsuarioCadastro = document.getElementById("MensagemUsuarioCadastro")
 
 usuarioCadastro.addEventListener("keyup", () => {
     const valor = usuarioCadastro.value;
-    const isValid = valor.length >= 3 && valor.length <= 20;
+    validações[2] = valor.length >= 3 && valor.length <= 20;
     
-    if(isValid){
+    if( validações[2]){
         erroUsuarioCadastro.classList.remove("invalid-feedback")
         erroUsuarioCadastro.classList.add("valid-feedback")
         MensagemUsuarioCadastro.innerText = "Usuário válido"  
@@ -71,9 +72,9 @@ MensagemEmailCadastro = document.getElementById("MensagemEmailCadastro")
 
 emailCadastro.addEventListener("keyup", () => {
     const valor = emailCadastro.value;
-    const isValid = validateEmail(valor);
+    validações[3] = validateEmail(valor);
     
-    if(isValid){
+    if( validações[3]){
         erroEmailCadastro.classList.remove("invalid-feedback")
         erroEmailCadastro.classList.add("valid-feedback")
         MensagemEmailCadastro.innerText = "Email válido"  
@@ -98,9 +99,9 @@ MensagemSenhaCadastro = document.getElementById("MensagemSenhaCadastro")
 
 senhaCadastro.addEventListener("keyup", () => {
     const valor = senhaCadastro.value;
-    const isValid = valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
+    validações[4] = valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
     
-    if(isValid){
+    if( validações[4]){
         erroSenhaCadastro.classList.remove("invalid-feedback")
         erroSenhaCadastro.classList.add("valid-feedback")
         MensagemSenhaCadastro.innerText = "Senha válida"  
@@ -120,9 +121,9 @@ MensagemConfirmarCadastro = document.getElementById("MensagemConfirmarCadastro")
 
 confirmarCadastro.addEventListener("keyup", () => {
     const valor = confirmarCadastro.value;
-    const isValid = valor===senhaCadastro.value && valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
+    validações[5] = valor===senhaCadastro.value && valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
     
-    if(isValid){
+    if( validações[5]){
         erroConfirmarCadastro.classList.remove("invalid-feedback")
         erroConfirmarCadastro.classList.add("valid-feedback")
         MensagemConfirmarCadastro.innerText = "Senha válida"  
@@ -131,5 +132,20 @@ confirmarCadastro.addEventListener("keyup", () => {
         erroConfirmarCadastro.classList.remove("valid-feedback")
         erroConfirmarCadastro.classList.add("invalid-feedback")
         MensagemConfirmarCadastro.innerText = "Senha inválida"
+    }
+})
+
+formCadastro = document.getElementById("formCadastro")
+
+formCadastro.addEventListener('submit', function (event) {
+    let validado = true;
+    validações.forEach(validação => {
+        if (!validação) {
+            validado = false;
+        }
+    });
+    if (!validado) {
+        event.preventDefault()
+        event.stopPropagation()
     }
 })
