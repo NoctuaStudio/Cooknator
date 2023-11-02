@@ -81,3 +81,8 @@ body{
 #texto-cadastro{
     opacity: 1;
 }
+
+.invalid-feedback{
+    color: #e66868;
+    font-size: 16px;
+}

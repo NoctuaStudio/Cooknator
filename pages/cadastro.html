@@ -96,9 +96,15 @@
                 </div>
                 <div class="modal-body p-5 pt-0">
                   <form class="" action="login" method="post" >
+                    <div class="invalid-feedback" id="loginErro">
+                      Email ou Senha incorretos.
+                    </div>
                     <div class="col-sm-12">
                       <label for="emailLogin" class="form-label">Email</label>
                       <input type="email" class="form-control" id="emailLogin" name="emailLogin" value="" required>
+                      <div class="invalid-feedback" id="erroEmailLogin">
+                        Email inválido.
+                      </div>
                     </div>
                     <div class="col-12">
                       <label for="senhaLogin" class="form-label">Senha</label>
@@ -115,6 +121,9 @@
                               </svg>
                           </span>
                           <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" value="" required>
+                          <div class="invalid-feedback" id="erroSenhaLogin">
+                            Senha inválida.
+                          </div>
                       </div>
                   </div>
                     <div>
@@ -148,22 +157,33 @@
                       <div class="col-sm-6">
                           <label for="nomeCadastro" class="form-label">Nome</label>
                           <input type="text" class="form-control" id="nomeCadastro" name="nomeCadastro" value="" required>
+                          <div class="invalid-feedback" id="erroNomeCadastro">
+                            Email inválido.
+                          </div>
                       </div>
                       <div class="col-sm-6">
                           <label for="sobrenomeCadastro" class="form-label">Sobrenome</label>
                           <input type="text" class="form-control" id="sobrenomeCadastro" name="sobrenomeCadastro" value="" required>
+                          <div class="invalid-feedback" id="erroSobrenomeCadastro">
+                            Email inválido.
+                          </div>
                       </div>
                       <div class="col-12">
-                          <label for="Username" class="form-label">Username</label>
+                          <label for="usuario" class="form-label">Nome de Usuário</label>
                           <div class="input-group has-validation">
                               <span class="input-group-text">@</span>
-                              <input type="text" class="form-control" id="username" name="username" placeholder="Username" value=""
-                                  required>
+                              <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario" value="" required>
+                              <div class="invalid-feedback" id="erroUsuarioCadastro">
+                                Email inválido.
+                              </div>
                           </div>
                       </div>
                       <div class="col-sm-12">
                         <label for="emailCadastro" class="form-label">Email</label>
                         <input type="email" class="form-control" id="emailCadastro" name="emailCadastro" value="" required>
+                        <div class="invalid-feedback" id="erroEmailCadastro">
+                          Email inválido.
+                        </div>
                       </div>
                       <div class="col-12">
                           <label for="senhaCadastro" class="form-label">Senha</label>
@@ -180,6 +200,9 @@
                                   </svg>
                               </span>
                               <input type="password" class="form-control" id="senhaCadastro" name="senhaCadastro" value="" required>
+                              <div class="invalid-feedback" id="erroSenhaCadastro">
+                                Email inválido.
+                              </div>
                           </div>
                       </div>
                       <div class="col-12">
@@ -197,12 +220,18 @@
                                   </svg>
                               </span>
                               <input type="password" class="form-control" id="confirmar" name="confirmar" value="" required>
+                              <div class="invalid-feedback" id="erroConfirmarCadastro">
+                                Email inválido.
+                              </div>
                           </div>
                       </div>
                       <div style="flex-direction: row; display: flex; justify-content: space-between;">
                         <div class="col-sm-12">
                           <label for="day" class="form-label">Data de Nascimento</label>
                           <input type="date" class="form-control" id="day" name="day" value="" required>
+                          <div class="invalid-feedback" id="erroNascimentoCadastro">
+                            Email inválido.
+                          </div>
                         </div>
                       </div>
                       <hr class="my-4">
