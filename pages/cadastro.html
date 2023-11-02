@@ -18,11 +18,11 @@
   <body>
     <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 1%;"> <!-- Não tire em hipóteze alguma esse style daqui, a página sumirá.-->
       <div class="buttons">
-        <button id="login-button" class="inactive">
+        <button id="login-button" class="inactive" type="button">
         Login
         </button>
         <img src="midia/cookienator-logo-name.png" alt="" width="150px" height="150px">
-        <button id="cadastro-button" class="active">
+        <button id="cadastro-button" class="active" type="button">
         Cadastro
         </button>
       </div>
@@ -204,7 +204,7 @@
           cadastroCard.style.display = 'none';
           setTimeout(() => {
             cadastroCard.classList.remove('rotate-cross');
-            //buttonCadastro.disebled = "false";
+            //buttonCadastro.disebled = "false";  //queria fazer isso funcionar para não bugar quando clica muitas vezes, porem não consegui	
           }, 1500); 
         }, 750);
         //buttonLogin.disebled = "true";
@@ -224,7 +224,7 @@
           loginCard.style.display = 'none';
           setTimeout(() => {
             loginCard.classList.remove('rotate-cross');
-           // buttonLogin.disebled = "false";
+           // buttonLogin.disebled = "false";    
           }, 1500);
         }, 750);
         //buttonCadastro.disebled = "true";
