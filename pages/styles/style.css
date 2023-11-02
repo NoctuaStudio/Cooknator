@@ -1,5 +1,6 @@
 body{
     background-color: #FDEFBC;
+    margin: 0;
 }
 
 .form-control, .input-group-text{

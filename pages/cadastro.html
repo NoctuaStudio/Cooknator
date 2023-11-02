@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="styles/style.css">
     <link href="modals.css" rel="stylesheet">
     <style>
+      .modal{
+        margin-top: -70%;
+      }
+
       .buttons{
           display: flex;
           justify-content: space-evenly;
@@ -52,7 +56,7 @@
       }
 
       .rotate-cross {
-        animation: cross-rotate 1s forwards ease-in-out;
+        animation: cross-rotate 1.5s forwards ease-in-out;
       }
 
       @keyframes cross-rotate {
@@ -76,7 +80,7 @@
   </style>
   </head>
   <body>
-    <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 5%;">
+    <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 1%;"> <!-- Não tire em hipóteze alguma esse style daqui, a página sumirá.-->
       <div class="buttons">
         <button id="login-button" class="inactive">
         Login
@@ -265,8 +269,8 @@
           setTimeout(() => {
             cadastroCard.classList.remove('rotate-cross');
             //buttonCadastro.disebled = "false";
-          }, 1000); 
-        }, 500);
+          }, 1500); 
+        }, 750);
         //buttonLogin.disebled = "true";
         textocadastro.style.opacity = 0;
         textologin.style.opacity = 1;
@@ -285,8 +289,8 @@
           setTimeout(() => {
             loginCard.classList.remove('rotate-cross');
            // buttonLogin.disebled = "false";
-          }, 1000);
-        }, 500);
+          }, 1500);
+        }, 750);
         //buttonCadastro.disebled = "true";
         textologin.style.opacity = 0;
         textocadastro.style.opacity = 1;
