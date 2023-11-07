@@ -13,7 +13,7 @@ emailLogin.addEventListener("keyup", () => {
         erroEmailLogin.classList.remove("invalid-feedback")
         erroEmailLogin.classList.add("valid-feedback")
         emailLogin.style.border = "2px solid green"
-        MensagemEmailLogin.innerText = ""
+        MensagemEmailLogin.innerText = "Email válido"
     }
     else {
         erroEmailLogin.style.display = "block"
@@ -36,7 +36,7 @@ senhaLogin.addEventListener("keyup", () => {
         erroSenhaLogin.classList.remove("invalid-feedback")
         erroSenhaLogin.classList.add("valid-feedback")
         senhaLogin.style.border = "2px solid green"
-        MensagemSenhaLogin.innerText = ""
+        MensagemSenhaLogin.innerText = "Senha válida"
     }
     else {
         erroSenhaLogin.style.display = "block"

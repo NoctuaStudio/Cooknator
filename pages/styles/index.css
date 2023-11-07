@@ -1,8 +1,12 @@
 body{
     margin: 0;
-    background-color: #FDEFBC;
+    
     border: none;
     height: 100vh;
+}
+
+main{
+    background-color: #FDEFBC;
 }
 
 header{
@@ -20,22 +24,34 @@ header{
     border-radius: 10px;
 }
 
-.logo-content{
+.header-content{
     display: flex;
+    align-items: center;
 }
 
 .logo-name{
     font-family: 'Pompiere', sans-serif;
     font-size: 40px;
+    padding-left: 5%;
 }
 
 
+.bi-search{
+    margin-left: -7%;
+}
 
-input{
-    background-color: #FDEFBC;
+#search {
+    background-color: #FDEFBC !important;
     border-radius: 10px;
     border: none;
-    padding: 5px;
+    width: 400px;
+    padding: 5px; 
+}
+
+.carousel-buttons{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .div_flex{
