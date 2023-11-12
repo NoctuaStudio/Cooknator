@@ -257,14 +257,34 @@ cadastrarBtn.addEventListener('mouseover', function (event) {
 })
 
 formCadastro.addEventListener('submit', function (event) {
+    event.preventDefault()
+    console.log("AAAAAAAAAAA")
     let validado2 = true;
     validações.forEach(validação => {
         if (!validação) {
             validado2 = false;
         }
     });
-    if (!validado2) {
-        event.preventDefault()
+    if (!validado2) {        
         event.stopPropagation()
+    } else{
+        let dados = {
+            nome: nomeCadastro.value,
+            sobrenome: sobrenomeCadastro.value,
+            usuario: usuarioCadastro.value,
+            email: emailCadastro.value,
+            senha: senhaCadastro.value,
+        }
+        console.log(JSON.stringify(dados))
+    fetch("https://localhost:8010/usuario", {
+        method: "POST",
+        body: JSON.stringify(dados),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(resultado => console.log(resultado))
     }
 })
+

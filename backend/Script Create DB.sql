@@ -8,13 +8,30 @@ Nome VARCHAR (50)
 );
 
 CREATE TABLE Usuarios(
-ID INT PRIMARY KEY,
+ID INT AUTO_INCREMENT PRIMARY KEY,
 Nome VARCHAR(50),
 Senha VARCHAR(50),
 Email VARCHAR(50),
 Username VARCHAR(30),
 Sobrenome VARCHAR(30)
 );
+
+INSERT INTO Usuarios (ID, Nome, Senha, Email, Username, Sobrenome) 
+VALUES
+(1, 'João', 'senha123', 'joao@email.com', 'joao123', 'Silva'),
+(2, 'Maria', 'maria456', 'maria@email.com', 'maria456', 'Santos'),
+(3, 'Pedro', 'pedro789', 'pedro@email.com', 'pedro789', 'Oliveira'),
+(4, 'Ana', 'ana987', 'ana@email.com', 'ana987', 'Pereira'),
+(5, 'Lucas', 'lucas654', 'lucas@email.com', 'lucas654', 'Ferreira'),
+(6, 'Carla', 'carla321', 'carla@email.com', 'carla321', 'Rodrigues'),
+(7, 'Miguel', 'miguel123', 'miguel@email.com', 'miguel123', 'Almeida'),
+(8, 'Julia', 'julia789', 'julia@email.com', 'julia789', 'Carvalho'),
+(9, 'Rafael', 'rafael567', 'rafael@email.com', 'rafael567', 'Melo'),
+(10, 'Lara', 'lara000', 'lara@email.com', 'lara000', 'Martins');
+
+INSERT INTO Usuarios (Nome, Senha, Email, Username, Sobrenome) VALUES
+('Lara', 'lara000', 'lara@email.com', 'lara000', 'Martins');
+
 
 
 
