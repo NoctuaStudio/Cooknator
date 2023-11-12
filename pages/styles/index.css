@@ -44,37 +44,82 @@ header{
     background-color: #FDEFBC !important;
     border-radius: 10px;
     border: none;
-    width: 400px;
+    width: 350px;
     padding: 5px; 
+    margin-top: -7%;
 }
 
 .carousel-buttons{
-    width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+}
+
+
+
+footer{
+    padding: 0!important;
+    margin: 0!important;
+    background-color: #FFE895;
+}
+
+.btn-primary{
+    background-color: black!important;
+    opacity: 0;
+    border: none!important;
+    transition: opacity 0.5s ease;
+}
+
+.btn-primary:hover{
+ opacity: 1;
+}
+
+.carousel-conteiner{
+    display: flex;
+    flex-direction: row;
+}
+
+.img-fluid{
+    border-top-right-radius: 20px!important;
+    border-top-left-radius: 20px;
+}
+
+.card{
+    background-color: #FFE895!important;
+    border-radius: 20px!important;
+}
+
+.pb-5{
+    padding-top: 1rem;
 }
 
 .div_flex{
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
+    text-align: end;
 }
 
 .div_filter_button{
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
-    margin-bottom: 0px;
 }
 
 .filter_button{ 
-    border-radius: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
     color: black;
     background-color: #FDEFBC;
     padding: 10px;
 }
 
+.div-separation{
+    width:80%;
+    margin-left: 10%;
+}
+
 .h1_margin{
-    margin-bottom: 0px;
+    display: flex;
+    align-content: baseline;
     margin-top: 20px;
 }
 
