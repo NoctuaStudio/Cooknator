@@ -6,8 +6,8 @@ const roteador = express.Router();
 roteador.get("/", getUsuarios)
 roteador.post("/", postUsuarios)
 
-roteador.put("/", putUsuarios)
+roteador.put("/:id", putUsuarios)
 
-roteador.delete("/",deleteUsuarios)
+roteador.delete("/:id",deleteUsuarios)
 
 export default roteador;
