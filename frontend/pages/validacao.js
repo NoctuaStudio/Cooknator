@@ -269,11 +269,11 @@ formCadastro.addEventListener('submit', function (event) {
         event.stopPropagation()
     } else{
         let dados = {
-            nome: nomeCadastro.value,
-            sobrenome: sobrenomeCadastro.value,
-            usuario: usuarioCadastro.value,
-            email: emailCadastro.value,
-            senha: senhaCadastro.value,
+            Nome: nomeCadastro.value,
+            Senha: senhaCadastro.value,
+            Email: emailCadastro.value,
+            Usuario: usuarioCadastro.value,
+            Sobrenome: sobrenomeCadastro.value,
         }
         console.log(JSON.stringify(dados))
     fetch("https://localhost:8010/usuario", {
