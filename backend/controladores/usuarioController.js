@@ -10,7 +10,7 @@ import { db } from "../db.js";
  }
  
  export const postUsuarios = (req, res) => {
-    const q =  "INSERT INTO Usuarios (ID, Nome, Senha, Email, Username, Sobrenome) VALUES(?)";
+    const q =  "INSERT INTO Usuarios (Nome, Senha, Email, Username, Sobrenome) VALUES(?)";
     const values = [
         req.body.Nome,
         req.body.Senha,

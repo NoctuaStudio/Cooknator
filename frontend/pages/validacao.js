@@ -258,7 +258,7 @@ cadastrarBtn.addEventListener('mouseover', function (event) {
 
 formCadastro.addEventListener('submit', function (event) {
     event.preventDefault()
-    console.log("AAAAAAAAAAA")
+    console.log("Teste -")
     let validado2 = true;
     validações.forEach(validação => {
         if (!validação) {
@@ -275,8 +275,10 @@ formCadastro.addEventListener('submit', function (event) {
             Usuario: usuarioCadastro.value,
             Sobrenome: sobrenomeCadastro.value,
         }
+
         console.log(JSON.stringify(dados))
-    fetch("https://localhost:8010/usuario", {
+
+        fetch("http://localhost:8010/usuario", {
         method: "POST",
         body: JSON.stringify(dados),
         headers:{
