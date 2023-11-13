@@ -8,6 +8,15 @@ import { db } from "../db.js";
         return res.status(200).json(data);
     })
  }
+
+ export const getUsuario = (req, res) => { 
+    const q = "SELECT * FROM Usuarios WHERE ID = ?";
+    db.query(q, [req.params.id], (erro, data) => {
+        if(erro) return res.json("Deu um erro aqui: "+ erro);
+        return res.status(200).json(data);
+    })
+ }
+
  
  export const postUsuarios = (req, res) => {
     const q =  "INSERT INTO Usuarios (Nome, Senha, Email, Username, Sobrenome) VALUES(?)";

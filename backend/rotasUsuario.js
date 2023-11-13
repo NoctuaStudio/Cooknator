@@ -1,9 +1,11 @@
 import express from "express";
-import { getUsuarios, postUsuarios, putUsuarios, deleteUsuarios } from "./controladores/usuarioController.js";
+import { getUsuarios, getUsuario, postUsuarios, putUsuarios, deleteUsuarios } from "./controladores/usuarioController.js";
 
 const roteador = express.Router();
 
 roteador.get("/", getUsuarios)
+roteador.get("/:id", getUsuario)
+
 roteador.post("/", postUsuarios)
 
 roteador.put("/:id", putUsuarios)
