@@ -24,8 +24,8 @@ import { db } from "../db.js";
         req.body.Descricao,
         req.body.Tipo,
         req.body.Imagem,
-        req.body.Avaliacao,
-        5,
+        /*Avaliacao,*/3,
+        /*ID_Usuario*/5,
         req.body.Tamanho,
         req.body.Dieta,
     ]   

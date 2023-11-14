@@ -4,14 +4,13 @@ const nomeReceita = document.getElementById("nomeReceita")
 const descricaoReceita = document.getElementById("descricaoReceita")
 const tipoReceita = document.getElementById("tipoReceita")
 const imagemReceita = document.getElementById("imagemReceita")
-const avaliacaoReceita = document.getElementById("avaliacaoReceita")
 const tamanhoReceita = document.getElementById("tamanhoReceita")
 const dietaReceita = document.getElementById("dietaReceita")
 
 formReceita.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Teste -")
-    let validado3 = true;
+    //let validado3 = true;
     // validações.forEach(validação => {
     //     if (!validação) {
     //         validado2 = false;
@@ -25,9 +24,9 @@ formReceita.addEventListener('submit', function (event) {
             Descricao: descricaoReceita.value,
             Tipo: tipoReceita.value,
             Imagem: imagemReceita.value,
-            Avaliacao: avaliacaoReceita.value,
+            //Avaliacao: avaliacaoReceita.value,
             Tamanho: tamanhoReceita.value,
-            Dieta: dietaReceita.values,
+            Dieta: dietaReceita.value,
         }
 
         console.log(JSON.stringify(dados))
