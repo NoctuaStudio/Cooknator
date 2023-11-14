@@ -25,6 +25,7 @@ import { db } from "../db.js";
         req.body.Tipo,
         req.body.Imagem,
         req.body.Avaliacao,
+        5,
         req.body.Tamanho,
         req.body.Dieta,
     ]   
