@@ -188,7 +188,7 @@ formCadastro.addEventListener('submit', function (event) {
             Nome: nomeCadastro.value,
             Senha: senhaCadastro.value,
             Email: emailCadastro.value,
-            Usuario: usuarioCadastro.value,
+            Username: usuarioCadastro.value,
             Sobrenome: sobrenomeCadastro.value,
         }
 

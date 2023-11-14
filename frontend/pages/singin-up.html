@@ -95,7 +95,7 @@
                   <h1 class="fw-bold mb-0 fs-2 title-form">Criar sua conta</h1>
                 </div>
                 <div class="modal-body p-5 pt-0">
-                  <form action="" class="needs-validation" novalidate id="formCadastro">
+                  <form action="post" class="needs-validation" novalidate id="formCadastro">
                     <div class="row g-3">
                       <div class="col-sm-6">
                           <label for="nomeCadastro" class="form-label">Nome</label>
@@ -210,10 +210,10 @@
           cadastroCard.style.display = 'none';
           setTimeout(() => {
             cadastroCard.classList.remove('rotate-cross');
-            //buttonCadastro.disebled = "false";  //queria fazer isso funcionar para não bugar quando clica muitas vezes, porem não consegui	
+            //buttonCadastro.disabled = "false";  //queria fazer isso funcionar para não bugar quando clica muitas vezes, porem não consegui	
           }, 1500); 
         }, 750);
-        //buttonLogin.disebled = "true";
+        //buttonLogin.disabled = "true";
         textocadastro.style.opacity = 0;
         textologin.style.opacity = 1;
         title.textContent = 'Login';
