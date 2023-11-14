@@ -42,8 +42,8 @@ Tipo VARCHAR(50)
 
 INSERT INTO Tipo_Receita(ID, Tipo) VALUES (1, 'Massa');
 INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Doce');
-INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Bebida');
-INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Fritura');
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (3, 'Bebida');
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (4, 'Fritura');
 
 CREATE TABLE Receitas(
 ID INT PRIMARY KEY ,
