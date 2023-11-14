@@ -20,13 +20,13 @@ import { db } from "../db.js";
  export const postReceitas = (req, res) => {
     const q =  "INSERT INTO Receitas (Nome, Descricao, ID_Tipo, Imagem, Avaliacao, ID_Usuario, Tamanho, Dieta) VALUES(?)";
     const values = [
-        req.body.nomeReceita,
-        req.body.descricaoReceita,
-        req.body.tipoReceita,
-        req.body.imagemReceita,
-        req.body.avaliacao,
-        req.body.tamanhoReceita,
-        req.body.dietaReceita,
+        req.body.Nome,
+        req.body.Descricao,
+        req.body.Tipo,
+        req.body.Imagem,
+        req.body.Avaliacao,
+        req.body.Tamanho,
+        req.body.Dieta,
     ]   
     
     db.query(q, [values], (erro) => {

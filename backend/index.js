@@ -8,3 +8,6 @@ app.use(cors());
 
 app.use("/usuario", rotasUsuario)
 app.listen(8010);
+
+// app.use("/receita", rotasReceitas)
+// app.listen(8010);
