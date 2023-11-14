@@ -40,6 +40,11 @@ ID INT PRIMARY KEY,
 Tipo VARCHAR(50)
 );
 
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (1, 'Massa');
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Doce');
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Bebida');
+INSERT INTO Tipo_Receita(ID, Tipo) VALUES (2, 'Fritura');
+
 CREATE TABLE Receitas(
 ID INT PRIMARY KEY ,
 Nome VARCHAR(80),
@@ -48,8 +53,8 @@ ID_Tipo INT,
 Imagem VARCHAR(255),
 Avaliacao FLOAT,
 ID_Usuario INT,
-Tamanho ENUM ('Pequeno', 'Médio', 'Grande'),
-Dieta ENUM ('Carnívoro', 'Vegetariano', 'Vegano'),
+Tamanho ENUM ('Pequeno', 'Medio', 'Grande'),
+Dieta ENUM ('Carnivoro', 'Vegetariano', 'Vegano'),
 FOREIGN KEY (ID_Tipo) REFERENCES Tipo_Receita(ID),
 FOREIGN KEY (ID_Usuario) REFERENCES Usuarios(ID)
 );
