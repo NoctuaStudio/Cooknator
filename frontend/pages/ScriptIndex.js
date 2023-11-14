@@ -1,11 +1,6 @@
-const botaoCadastro = document.getElementById("BotaoCadastro")
-const botaoLogin = document.getElementById("BotaoLogin")
+const botaoCadastroLogin = document.getElementById("BotaoCadastroLogin")
 
-botaoCadastro.addEventListener('click', function (event) {
-    window.location.href = "singin-up.html"
-})
-
-botaoLogin.addEventListener('click', function (event) {
+botaoCadastroLogin.addEventListener('click', function (event) {
     window.location.href = "singin-up.html"
 })
 

@@ -1,4 +1,20 @@
+.circulo{
+    width: 275px;
+    height: 275px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+    
+}
 
+.caixa-circulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-item{
+     transition: transform 0.12s ease, opacity .5s ease-out!important;
+}
 
 body{
     margin: 0;
@@ -68,17 +84,19 @@ header{
 }
 
 
-.bi-search{
-    margin-left: -7%;
+.input-group-text{
+   border: none!important;
+   margin-top: 3%;
 }
 
 #search {
-    background-color: #FDEFBC !important;
+    background-color: #FDEFBC;
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
     border-radius: 10px;
     border: none;
     width: 350px;
-    padding: 5px; 
-    margin-top: -7%;
+    margin-top: 3%;
 }
 
 .carousel-buttons{
@@ -171,9 +189,12 @@ footer{
     color: #FDEFBC;
 }
 
+#BotaoCadastroLogin{
+    width: 200px;
+    border-radius: 10px;
+}
 
 footer{
-    border: none;
-    margin: none;
-    padding: none;
+    width: 100%;
+    height: 12%;
 }

@@ -35,20 +35,22 @@
             <img src="midia/cookienator-logo.png" width="100px" height="100px" alt=""> 
             <span class="logo-name"> COOKNATOR </span>   
         </div>
-        <div>
-            <form action="">
-                <div>
-                    <input type="text" id="search" placeholder="Buscar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                    </svg>
+        <div class="header-content">
+            <div class="input-group mb-3">
+                <div class="rounded-4">
+                  <input type="text" class="form-control" id="search" placeholder="Buscar">
+                  
                 </div>
-            </form>
+                <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                </span>
+              </div>
         </div>
         <div class="header-content">
             <form action="">
-                <button type="" class="button-header" id="BotaoCadastro">Cadastro</button>
-                <button type="" class="button-header" id="BotaoLogin">Login</button>
+                <button type="" class="button-header btn" id="BotaoCadastroLogin">Cadastro | Login</button>
             </form>
         </div>
     </header>
@@ -83,7 +85,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleIndicators2" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="row">
@@ -233,76 +235,45 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                            <div id="carouselExampleIndicators3" class="carousel slide">
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="row">
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-            
-                                                </div>
+                                    <div class="carousel-item active" data-bs-interval="100">
+                                        <div class="row" >
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img  class="circulo" alt="100%x280" src="midia/salada.png">
+                                                <h4>Saladas</h4>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/comida-saudavel.jpg">
+                                                <h4>Saudáveis</h4>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/doces-sobremesas.jpg">
+                                                <h4>Doces e Sobremesas</h4>
                                             </div>
-            
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/bebida-morango.jpeg">
+                                                <h4>Bebidas</h4>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <div class="row">
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-            
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/batata-frita-sequinha-crocante.jpeg">
+                                                <h4>Petiscos e Lanches</h4>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/massas.jpg">
+                                                <h4>Massas</h4>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/carnes.jpeg">
+                                                <h4>Carnes</h4>
+                                            </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/credo.webp">
+                                                <h4>Peixes e frutos do mar</h4>
                                             </div>
             
                                         </div>
@@ -310,35 +281,13 @@
                                     <div class="carousel-item">
                                         <div class="row">
             
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-            
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/frango-frito.jpg">
+                                                <h4>Frangos e outras aves</h4>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card">
-                                                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
-                                                    <div class="card-body">
-                                                        <h4 class="card-title">Special title treatment</h4>
-                                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                    </div>
-                                                </div>
+                                            <div class="col-md-3 mb-2 caixa-circulo">
+                                                <img class="circulo" alt="100%x280" src="midia/legumes.webp">
+                                                <h4>Legumes e Verduras</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -407,18 +356,7 @@
                                         <option value="Vegano"> Vegano </option>
                                     </select>
                                     <label for="dietaReceita">Dieta</label>
-                                </div>
-                                <!-- <div class="form-floating mb-3 col-5">
-                                    <select id="avaliacaoReceita" class="form-control rounded-3" name="avaliacaoReceita">
-                                        <option value="0"> - </option>
-                                        <option value="1"> 1 </option>
-                                        <option value="2"> 2 </option>
-                                        <option value="3"> 3 </option>
-                                        <option value="4"> 4 </option>
-                                        <option value="5"> 5 </option>
-                                    </select>
-                                    <label for="avaliacaoReceita">avaliacao</label>
-                                </div> -->
+                                </div>              
                             </div>
                             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" id="receitaButton">Criar</button>
                             <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
@@ -429,7 +367,7 @@
         </div>
     </section>
     </main>
-    <footer >
+    <footer>
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
