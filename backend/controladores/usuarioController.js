@@ -17,6 +17,27 @@ import { db } from "../db.js";
     })
  }
 
+ export const postLogin = (req, res) => { 
+    const q = "SELECT * FROM Usuarios WHERE Email = ? AND Senha = ?";
+
+    const values = [
+        req.body.Email,
+        req.body.Senha
+    ]   
+
+    db.query(q, [...values], (erro, data) => {
+        if(erro) return res.json("Deu um erro aqui: "+ erro);
+        else{
+            if(data.length != 0){
+                console.log(data)
+                return res.status(200).json(true);
+            }
+            else
+                return res.status(200).json(false);
+        }  
+    })
+ }
+
  
  export const postUsuarios = (req, res) => {
     const q =  "INSERT INTO Usuarios (Nome, Senha, Email, Username, Sobrenome) VALUES(?)";
