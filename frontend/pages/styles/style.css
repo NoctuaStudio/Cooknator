@@ -179,8 +179,22 @@ header{
     opacity: 1;
 }
 
+#sem-hover:hover{
+    background-color: #FCE38A;
+}
+
 .invalid-feedback{
     color: #e66868;
     font-size: 16px;
 }
+
+.align-password-help{
+    margin-bottom: -5%;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.bg-yellow{
+    background-color: #FCE38A;
+}   
 

@@ -6,6 +6,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
     <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="midia/cookienator-logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
@@ -14,6 +15,7 @@
     <link rel="icon" href="imagem/icone.png">
     <link rel="stylesheet" href="styles/style.css">
     <link href="modals.css" rel="stylesheet">
+    
   </head>
   <body>
     <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 1%;"> <!-- Não tire em hipóteze alguma esse style daqui, a página sumirá.-->
@@ -129,7 +131,43 @@
                         </div>
                       </div>
                       <div class="col-12">
-                          <label for="senhaCadastro" class="form-label">Senha</label>
+                        <div class="align-password-help">
+                          <div>
+                            <label for="senhaCadastro" class="form-label">Senha</label>
+                          </div>
+                          <div class="dropdown  bd-mode-toggle">
+                            <svg data-bs-toggle="dropdown" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-info-circle dropdown-toggle" viewBox="0 0 16 16">
+                                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                      <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                              <ul class="dropdown-menu dropdown-menu-end shadow bg-yellow">
+                                <li>
+                                  <p id="sem-hover" class="dropdown-item d-flex align-items-center">
+                                    <span >Sua senha deve conter:</span>
+                                    <ul>
+                                      <li>
+                                        Uma letra maiscula
+                                      </li>
+                                      <li>
+                                        Uma letra minuscula
+                                      </li>
+                                      <li>
+                                        Um número
+                                      </li>
+                                      <li>
+                                        Um caractere especial (!@#$%&*()-+)
+                                      </li>
+                                      <li>
+                                        No mínimo 8 caracteres
+                                      </li>
+                                    </ul>
+                                    <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+                                  </p>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                           <div class="input-group has-validation">
                               <span class="input-group-text senhaVisibilidade" onclick="mostrarOcultarSenha()" >
                                   <svg id="eye-dismissed1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
@@ -142,12 +180,11 @@
                                       <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                                   </svg>
                               </span>
-                              <input type="password" class="form-control" id="senhaCadastro" name="senhaCadastro" value="" required>
+                              <input type="password" class="form-control dropdown-toggle" id="senhaCadastro" name="senhaCadastro" value="" required>
                               <div class="invalid-feedback" id="erroSenhaCadastro">
                                 <p id="MensagemSenhaCadastro">Senha inválida</p>
                               </div>
                           </div>
-                      </div>
                       <div class="col-12">
                           <label for="confirmar" class="form-label">Confirmar Senha</label>
                           <div class="input-group has-validation">
@@ -299,5 +336,6 @@
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 </html>
