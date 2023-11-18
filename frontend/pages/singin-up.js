@@ -73,7 +73,7 @@ function mostrarOcultarConfirmarSenha() {
     }
 
 } 
-   
+
 function mostrarOcultarSenha() {
     var senhaInput = document.getElementById("senhaCadastro");
     var icon1 = document.getElementById("eye-dismissed1");
@@ -188,6 +188,8 @@ formLogin.addEventListener('submit', function (event) {
     if (!validado4) {
         event.stopPropagation()
         console.log("Login incorreto!!!!!")
+        
+        
     }else{
         console.log("Login Correto!!!!!")
         fetch("http://localhost:8010/usuario/3", {

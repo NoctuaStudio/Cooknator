@@ -50,10 +50,6 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  label{
-    
-  }
-
   .form-control, .input-group-text{
     background-color: #FDEFBC!important;
     border: none;
@@ -70,22 +66,9 @@
     background-color: #FFECAA;
 }
 
-.btn{
-    background-color: #FCE38A;
-    border: none;
-    color: #1C1C1C;
-}
-
-.btn:active{
-    background-color: #1C1C1C;
-    border: 1px solid #faf0d2;
-    color: #faf0d2;
-}
-
-.btn:hover{
-    background-color: #1C1C1C;
-    border: 1px solid #faf0d2;
-    color: #faf0d2;
+.form-check-input:checked{
+  background-color: #f7d24e!important;
+  border-color: #ffe278!important;
 }
 
   .btn-bd-primary {

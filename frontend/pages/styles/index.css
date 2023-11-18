@@ -35,23 +35,28 @@ body{
     height: 500%;
 }
 
-.btn{
-    background-color: #FCE38A!important;
-    border: 2px #1C1C1C!important;
-    color: #1C1C1C!important;
+.btn-amarelo{
+    background-color: #FFE895;
+    border: none;
+    color: #1C1C1C;
 }
 
-.btn:active{
-    background-color: #1C1C1C!important;
-    border: 1px solid #faf0d2;
+#searchIngredientes::placeholder{
+    color: #585757;
+}
+
+.btn-amarelo:active{
+    background-color: #1C1C1C;
+    border: none;
     color: #faf0d2;
 }
 
-.btn:hover{
+.btn-amarelo:hover{
     background-color: #1C1C1C!important;
-    border: 1px solid #faf0d2!important;
+    border: none!important;
     color: #faf0d2!important;
 }
+
 
 main{
     background-color: #FDEFBC;
@@ -184,9 +189,15 @@ footer{
     width: 90vw;
 }
 
-.filter_button:hover, .filter_button:active{
-    background-color: black;
-    color: #FDEFBC;
+.btn-filter{
+    border: 2px black solid!important;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.btn-filter:hover, .btn-filter:active{
+    background-color: #1C1C1C!important;
+    color: #e9e7e7!important;
 }
 
 #BotaoCadastroLogin{

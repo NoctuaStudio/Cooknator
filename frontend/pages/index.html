@@ -60,17 +60,17 @@
             <div class="h1_margin">
                 <h1>Recomendados</h1>
             </div>
-            <div class="div_filter_button">
+            <div class="d-flex flex-row justify-content-evenly w-25">
                 <form action="">
-                    <button type="" class="filter_button">Popularidade</button>
+                    <button type="" class="btn btn-outline-dark p-2 border-2 rounded-4">Popularidade</button>
                 </form>
 
                 <form action="">
-                    <button type="" class="filter_button">A - Z</button>
+                    <button type="" class="btn btn-outline-dark p-2 border-2 rounded-4">A - Z</button>
                 </form>
 
                 <form action="">
-                    <button type="" class="filter_button">Recente</button>
+                    <button type="" class="btn btn-outline-dark p-2 border-2 rounded-4">Recente</button>
                 </form>
             </div>
         </div>
@@ -210,17 +210,17 @@
             <div class="h1_margin">
                 <h1>Recomendados</h1>
             </div>
-            <div class="div_filter_button">
+            <div class="d-flex flex-row justify-content-evenly w-25">
                 <form action="">
-                    <button type="button" class="filter_button">Popularidade</button>
+                    <button type="button" class="btn btn-outline-dark p-2 border-2 rounded-4">Popularidade</button>
                 </form>
 
                 <form action="">
-                    <button type="button" class="filter_button">A - Z</button>
+                    <button type="button" class="btn btn-outline-dark p-2 border-2 rounded-4">A - Z</button>
                 </form>
 
                 <form action="">
-                    <button type="button" class="filter_button">Recente</button>
+                    <button type="button" class="btn btn-outline-dark p-2 border-2 rounded-4">Recente</button>
                 </form>
             </div>
         </div>
@@ -317,29 +317,27 @@
                             <div style="display: flex; flex-direction: row; justify-content: space-between;">
                                 <div class="form-floating mb-3 col-6">
                                     <input type="text" class="form-control rounded-3" id="nomeReceita" placeholder="name@example.com">
-                                    <label for="nomeReceita">Nome</label>
+                                    <label for="nomeReceita">Nome da Receita</label>
                                 </div>
                                 <div class="form-floating mb-3 col-5">
                                     <select id="tipoReceita" class="form-control rounded-3" name="tipoReceita">
                                         <option value="0"> - </option>
-                                        <option value="1"> Massa </option>
-                                        <option value="2"> Doce </option>
-                                        <option value="3"> Bebida </option>
-                                        <option value="4"> Fritura </option>
+                                        <option value="1"> Saladas </option>
+                                        <option value="2"> Saudáveis </option>
+                                        <option value="3"> Doces e Sobremesas </option>
+                                        <option value="4"> Bebidas </option>
+                                        <option value="5"> Petiscos e Lanches </option>
+                                        <option value="6"> Massas </option>
+                                        <option value="7"> Carnes </option>
+                                        <option value="8"> Peixes e Frutos do Mar </option>
+                                        <option value="9"> Frango e outras Aves</option>
+                                        <option value="10">Legumes e Verduras</option>
                                     </select>
                                     <label for="tipoReceita">Categoria</label>
                                 </div>
                             </div>
-                            <div class="form-floating mb-3">
-                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
-                                <label for="floatingPassword">Descrição</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="imagemReceita" placeholder="name@example.com">
-                                <label for="imagemReceita">Imagem</label>
-                            </div>
-                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                                <div class="form-floating mb-3 col-6">
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="form-floating mb-3 col-4">
                                     <select id="tamanhoReceita" class="form-control rounded-3" name="tamanhoReceita">
                                         <option value="0"> - </option>
                                         <option value="Pequeno"> Pequeno </option>
@@ -348,7 +346,7 @@
                                     </select>
                                     <label for="tamanhoReceita">Tamanho</label>
                                 </div>
-                                <div class="form-floating mb-3 col-5">
+                                <div class="form-floating mb-3 col-7">
                                     <select id="dietaReceita" class="form-control rounded-3" name="dietaReceita">
                                         <option value="nada"> - </option>
                                         <option value="Carnivoro"> Carnívoro </option>
@@ -358,8 +356,24 @@
                                     <label for="dietaReceita">Dieta</label>
                                 </div>              
                             </div>
-                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" id="receitaButton">Criar</button>
-                            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                            <div class="form-floating mb-3">
+                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
+                                <label for="floatingPassword"> Descrição </label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
+                                <label for="floatingPassword"> Ingredientes </label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
+                                <label for="floatingPassword"> Modo de Preparo</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control rounded-3" id="imagemReceita" placeholder="name@example.com">
+                                <label for="imagemReceita">Imagem</label>
+                            </div>
+                            
+                            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" id="receitaButton">Criar</button>
                         </form>
                     </div>
                 </div>
@@ -367,14 +381,7 @@
         </div>
     </section>
     </main>
-    <footer>
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-        </ul>
+    <footer class="p-4 d-flex align-content-center justify-content-center">
         <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
     </footer>
     <script src=" https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js "></script>

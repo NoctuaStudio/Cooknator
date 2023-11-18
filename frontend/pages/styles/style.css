@@ -90,19 +90,19 @@ header{
     background-color: #FFECAA;
 }
 
-.btn{
+.btn-primary{
     background-color: #FCE38A;
     border: none;
     color: #1C1C1C;
 }
 
-.btn:active{
+.btn-primary:active{
     background-color: #1C1C1C;
     border: 1px solid #faf0d2;
     color: #faf0d2;
 }
 
-.btn:hover{
+.btn-primary:hover{
     background-color: #1C1C1C;
     border: 1px solid #faf0d2;
     color: #faf0d2;
