@@ -186,30 +186,63 @@ formLogin.addEventListener('submit', function (event) {
         }
     });
     if (!validado4) {
-        event.stopPropagation()
-        console.log("Login incorreto!!!!!")
-        
-        
-    }else{
-        console.log("Login Correto!!!!!")
-        fetch("http://localhost:8010/usuario/3", {
-            method: "GET",           
-            headers:{
-                "Content-Type": "application/json"
-            }}) 
-        .then(resposta => resposta.json())
-        .then(resultado => console.log(resultado))
+        console.log("Email ou senha inválida")
+        // NAO PASSOU DE VALIDAÇÕES BASICAS
+        console.log(emailLogin.value)
+        console.log(senhaLogin.value)
+        return;         
     }
-})
+    
+    console.log("Indo verificar usuario");
+
+    buscarUsuario(emailLogin.value, senhaLogin.value)
+        .then(passou => {
+            console.log("RESULTADO DO METODO: " + passou);
 
 
-function buscarUsuario(email) {
-    fetch("http://localhost:8010/usuario", {
-            method: "GET",           
+            if (!passou){
+                console.log(emailLogin.value)
+                console.log(senhaLogin.value)
+                event.stopPropagation()
+                console.log("Login Incorreto")
+                // PASSOU DE VALIDAÇÕES DE CARACTERE MAS NAO EXISTE NO BANCO
+            }
+            else{
+                console.log("Login Passou!!!!!")
+                // EXISTE NO BANCO
+                // TODO FAZER O LOGIN PELO SESSION E COOKIES AQUI!!
+            }
+        })
+
+        })
+        .catch(erro => {
+            console.error("Erro ao buscar usuário:", erro);
+        });
+
+    
+
+
+function buscarUsuario(email, senha) {
+
+    let dados = {
+        Email: email,
+        Senha: senha       
+    }
+    console.log(JSON.stringify(dados))
+
+    
+        return fetch("http://localhost:8010/usuario/login", {
+            method: "POST",
+            body: JSON.stringify(dados),           
             headers:{
                 "Content-Type": "application/json"
             }}) 
         .then(resposta => resposta.json())
-        .then(resultado => console.log(resultado))        
-        }
+        .then(resultado => {
+            console.log("RETORNANDO:" + resultado );
+            return (resultado);
+        })        
+    }
+
+    
 

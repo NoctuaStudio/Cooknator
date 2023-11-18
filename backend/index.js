@@ -7,7 +7,7 @@ const  app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use("/usuario", rotasUsuario)
+ app.use("/usuario", rotasUsuario)
 // app.listen(8010);
 
 app.use("/receita", rotasReceitas)
