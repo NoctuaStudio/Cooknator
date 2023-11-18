@@ -24,22 +24,3 @@ fetch("http://localhost:8010/receita", {
                           
             }})      
           
-
-class Receita {
-    
-    nome = " "
-    imagem = " "
-    descricao = " "
-    tipo = " "
-    avaliacao = " "
-    tamanho = " "
-    dieta = " "
-    dono = " "
-
-    receita(nome, imagem, descricao){
-        this.nome = nome
-        this.imagem = imagem
-        this.descricao = descricao
-    }
-}
-

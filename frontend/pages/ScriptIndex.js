@@ -1,7 +1,8 @@
-const botaoCadastroLogin = document.getElementById("BotaoCadastroLogin")
+const botaoCadastroLogin = document.getElementById("loginCadastro")
 
-botaoCadastroLogin.addEventListener('click', function (event) {
-    window.location.href = "singin-up.html"
+botaoCadastroLogin.addEventListener('submit', function (event) {
+    event.preventDefault()
+    location.href = "singin-up.html"
 })
 
 //Nao faço ideia de como faz isso, peguei no Google e não foi. Por favor ajudar. KKKKKKKKK eu n sou bom de backend, vim fazer o modal aparecer
