@@ -85,6 +85,10 @@ header{
     border: #1C1C1C 2px solid;
 }   
 
+.tamanho-imagem{
+    width: 215px;
+    height: 150px;
+}
 
 .modal-content{
     background-color: #FFECAA;
