@@ -34,7 +34,8 @@ fetch("http://localhost:8010/receita", {
                 card.appendChild(img);
                 card.appendChild(cardBody);
                 cardBody.appendChild(h4);
-                cardBody.appendChild(p);    
+                cardBody.appendChild(p);
+                receitasHTML.appendChild(div);    
                           
             }})      
           
