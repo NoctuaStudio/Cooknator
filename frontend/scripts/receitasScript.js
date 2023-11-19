@@ -2,7 +2,7 @@ console.log("ABRIU A PÁGINA")
 console.log("Tentando carregar 3 receitas")
 
 const receitasHTML = document.getElementsByClassName("product-list")[0];
-
+const receitasMensagem = document.getElementById("receitasMensagem");
 
     
 fetch("http://localhost:8010/receita", {
@@ -12,8 +12,10 @@ fetch("http://localhost:8010/receita", {
             }}) 
         .then(resposta => resposta.json())
         .then(receitas => {
-
+            receitasMensagem.classList.add("d-none");
+            receitasMensagem.classList.remove("d-flex");
             for (let i = 0; i < receitas.length; i++) {
+                
                 const div = document.createElement('div');
                 const card = document.createElement('div');
                 const img = document.createElement('img');
