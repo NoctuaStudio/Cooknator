@@ -5,6 +5,11 @@ const buttonCadastro = document.getElementById('cadastro-button');
 const title = document.getElementsByTagName('title')[0];
 const textocadastro = document.getElementById('texto-cadastro');
 const textologin = document.getElementById('texto-login');
+const erroLogin = document.getElementById('loginErro');
+
+function mostrarErroLogin(){
+    erroLogin.style.display = "block";
+}   
 
 function showLoginCard() {
 cadastroCard.classList.add('rotate-cross');
@@ -151,29 +156,9 @@ senhaLogin.addEventListener("keyup", () => {
     }
 })
 
-const formLogin = document.getElementById("formLogin")
-const loginBtn = document.getElementById("loginButton")
 
-loginBtn.addEventListener('mouseover', function (event) {
-    let validado3 = true;
-    validaçõesLogin.forEach(validação => {
-        if (!validação) {
-            validado3 = false;
-        }
-    });
-    if (!validado3) {
-        loginBtn.style.backgroundColor = "#FCE38A"
-        loginBtn.style.color = '#1C1C1C'
-        loginBtn.style.border = 'none'
-        loginBtn.style.cursor = "default"
-    } else {
-        loginBtn.style.backgroundColor = "#1C1C1C"
-        loginBtn.style.color = '#faf0d2'
-        loginBtn.style.border = 'none'
-        loginBtn.style.cursor = "pointer"
-    }
-}
-)
+
+
 
 formLogin.addEventListener('submit', function (event) {
     event.preventDefault()
@@ -190,9 +175,12 @@ formLogin.addEventListener('submit', function (event) {
         // NAO PASSOU DE VALIDAÇÕES BASICAS
         console.log(emailLogin.value)
         console.log(senhaLogin.value)
+        mostrarErroLogin();
         return;         
     }
     
+     
+
     console.log("Indo verificar usuario");
 
     buscarUsuario(emailLogin.value, senhaLogin.value)
@@ -203,9 +191,10 @@ formLogin.addEventListener('submit', function (event) {
             if (!passou){
                 console.log(emailLogin.value)
                 console.log(senhaLogin.value)
+                mostrarErroLogin();
                 event.stopPropagation()
                 console.log("Login Incorreto")
-                // PASSOU DE VALIDAÇÕES DE CARACTERE MAS NAO EXISTE NO BANCO
+                
             }
             else{
                 console.log("Login Passou!!!!!")
@@ -214,11 +203,12 @@ formLogin.addEventListener('submit', function (event) {
             }
         })
 
-        })
+        
         .catch(erro => {
+            mostrarErroLogin();
             console.error("Erro ao buscar usuário:", erro);
         });
-
+    })
     
 
 
