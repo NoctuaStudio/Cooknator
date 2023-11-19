@@ -113,6 +113,11 @@ header{
     background-color: black!important;
 }
 
+.tamanho-imagem{
+    width: 215px;
+    height: 150px;
+}
+
 footer{
     padding: 0!important;
     margin: 0!important;
