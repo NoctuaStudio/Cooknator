@@ -1,7 +1,7 @@
 console.log("ABRIU A PÁGINA")
 console.log("Tentando carregar 3 receitas")
 
-receitasHTML = document.getElementsByClassName("pt-md-4")
+const receitasHTML = document.getElementsByClassName("product-list")[0];
 
 
     
@@ -14,13 +14,28 @@ fetch("http://localhost:8010/receita", {
         .then(receitas => {
 
             for (let i = 0; i < receitas.length; i++) {
-                const receitaHTML = receitasHTML[i];
-                const img = receitaHTML.querySelector('img');
-                const h4 = receitaHTML.querySelector('h4');
-                const p = receitaHTML.querySelector('p'); 
+                const div = document.createElement('div');
+                const card = document.createElement('div');
+                const img = document.createElement('img');
+                const cardBody = document.createElement('div');
+                const h4 = document.createElement('h4');
+                const p = document.createElement('p');
+                div.classList.add('col-md-4');
+                div.classList.add('pt-md-4');
+                card.classList.add('card');
+                img.classList.add('img-fluid');
+                cardBody.classList.add('card-body');
+                h4.classList.add('card-title');
+                p.classList.add('card-text');
                 img.src = receitas[i].Imagem; 
                 h4.textContent = receitas[i].Nome
-                p.textContent = receitas[i].Descricao    
+                p.textContent = receitas[i].Descricao
+                div.appendChild(card);
+                card.appendChild(img);
+                card.appendChild(cardBody);
+                cardBody.appendChild(h4);
+                cardBody.appendChild(p);
+                receitasHTML.appendChild(div);    
                           
             }})      
           
