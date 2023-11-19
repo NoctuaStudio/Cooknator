@@ -50,28 +50,28 @@
         </div>
         <div class="header-content">
             <form action="">
-                <button type="" class="button-header btn" id="BotaoCadastroLogin">Cadastro | Login</button>
+                <button type="submit" class="button-header btn" id="BotaoCadastroLogin">Cadastro | Login</button>
             </form>
         </div>
     </header>
     <main class="d-flex flex-column align-items-center">
         <div class="p-md-2 w-75 d-flex flex-column align-items-center">
-            <h1 name="recipe-name" class="p-2" id="recipe-name">nome da receita</h1>
-            <img class="rounded-2" src="../midia/salada.png" alt="" width="450px" height="300px">
+            <h1 name="recipe-name" class="p-2" id="nome-receita">nome da receita</h1>
+            <img class="rounded-2" id="imagem-receita" src="../midia/salada.png" alt="" width="450px" height="300px">
             <hr class="col-8">
             <div class="d-flex flex-row justify-content-evenly w-50">
-                <span> Dificuldade </span>
-                <span> Tempo de Preparo </span>
-                <span> Tamanho da Porção</span>
+                <span id="categoria-receita"> Categoria </span>
+                <span id="tempo-receita"> Tempo de Preparo </span>
+                <span id="tamanho-receita"> Tamanho da Porção</span>
             </div>
             <hr class="col-8">
-            <div class="p-4">
+            <div class="p-4" id="descricao-receita">
                 descricao
             </div>
-            <div class="p-4">
+            <div class="p-4" id="igredientes-receita">
                 Ingredientes
             </div>
-            <div class="p-4">
+            <div class="p-4" id="ingredientes-receita">
                 Modo de preparo
             </div>
         </div>

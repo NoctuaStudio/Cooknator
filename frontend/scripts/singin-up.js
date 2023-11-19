@@ -111,76 +111,11 @@ function mostrarOcultarSenhaLogin() {
 let validaçõesLogin = [false, false]
 
 const emailLogin = document.getElementById("emailLogin")
-const erroEmailLogin = document.getElementById("erroEmailLogin")
-const MensagemEmailLogin = document.getElementById("MensagemEmailLogin")
-
-emailLogin.addEventListener("keyup", () => {
-    const valor = emailLogin.value;
-    validaçõesLogin[0] = validateEmail(valor);
-
-    if (validaçõesLogin[0]) {
-        erroEmailLogin.classList.remove("invalid-feedback")
-        erroEmailLogin.classList.add("valid-feedback")
-        emailLogin.style.border = "2px solid green"
-        MensagemEmailLogin.innerText = "Email válido"
-    }
-    else {
-        erroEmailLogin.style.display = "block"
-        erroEmailLogin.classList.remove("valid-feedback")
-        erroEmailLogin.classList.add("invalid-feedback")
-        emailLogin.style.border = "2px solid red"
-        MensagemEmailLogin.innerText = "Email inválido"
-    }
-})
-
 const senhaLogin = document.getElementById("senhaLogin")
-const erroSenhaLogin = document.getElementById("erroSenhaLogin")
-const MensagemSenhaLogin = document.getElementById("MensagemSenhaLogin")
-
-senhaLogin.addEventListener("keyup", () => {
-    const valor = senhaLogin.value;
-    validaçõesLogin[1] = valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
-
-    if (validaçõesLogin[1]) {
-        erroSenhaLogin.classList.remove("invalid-feedback")
-        erroSenhaLogin.classList.add("valid-feedback")
-        senhaLogin.style.border = "2px solid green"
-        MensagemSenhaLogin.innerText = "Senha válida"
-    }
-    else {
-        erroSenhaLogin.style.display = "block"
-        erroSenhaLogin.classList.remove("valid-feedback")
-        erroSenhaLogin.classList.add("invalid-feedback")
-        senhaLogin.style.border = "2px solid red"
-        MensagemSenhaLogin.innerText = "Senha inválida"
-    }
-})
-
-
-
-
 
 formLogin.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Login interrompido...")
-
-    let validado4 = true;
-    validaçõesLogin.forEach(validação => {
-        if (!validação) {
-            validado4 = false;
-        }
-    });
-    if (!validado4) {
-        console.log("Email ou senha inválida")
-        // NAO PASSOU DE VALIDAÇÕES BASICAS
-        console.log(emailLogin.value)
-        console.log(senhaLogin.value)
-        mostrarErroLogin();
-        return;         
-    }
-    
-     
-
     console.log("Indo verificar usuario");
 
     buscarUsuario(emailLogin.value, senhaLogin.value)

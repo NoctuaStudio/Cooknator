@@ -160,15 +160,10 @@ cadastrarBtn.addEventListener('mouseover', function (event) {
         }
     });
     if (!validado1) {
-        cadastrarBtn.style.backgroundColor = "#FCE38A"
-        cadastrarBtn.style.color = '#1C1C1C'
-        cadastrarBtn.style.border = 'none'
-        cadastrarBtn.style.cursor = "default"
+        cadastrarBtn.classList.add("btn-disabled")
     } else {
-        cadastrarBtn.style.backgroundColor = "#1C1C1C"
-        cadastrarBtn.style.color = '#faf0d2'
-        cadastrarBtn.style.border = 'none'
-        cadastrarBtn.style.cursor = "pointer"
+        cadastrarBtn.classList.remove("btn-disabled");
+        cadastrarBtn.classList.add("active");
     }
 })
 

@@ -1,0 +1,158 @@
+:root{
+    --yellow-1: #FDEFBC;
+    --yellow-2: #FCE38A;
+    --yellow-3: #FFE895;
+    --black-1: #1C1C1C;
+    --black-2: rgb(35, 35, 35);
+    --white-1: #ffffff;
+    --white-2: #faf0d2;
+
+}
+
+body{
+    background-color: var(--yellow-1);
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-img{
+    margin-bottom: -4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 10px;
+}
+
+.buttons button{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: 2px solid var(--black-1);
+    background-color: var(--white-1);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#login-card{
+    display: none;
+}
+#cadastro-card{
+    display: block;
+}
+
+.title-form{
+    margin-top: 4%;
+}
+
+.esqueceu-senha{
+  justify-content: center; 
+  display: flex; 
+  margin-bottom: -4%; 
+  margin-top: 2%;
+}
+
+.rotate-cross {
+  animation: cross-rotate 1.5s forwards ease-in-out;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+    padding: 10px;
+    align-items: end;
+}
+
+.buttons button{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    border: 2px solid var(--black-1);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background-color: var(--black-1);
+    color: var(--white-1);
+}
+
+.active{
+    background-color: var(--black-2)!important;
+    color: var(--white-1)!important;
+}
+
+.inactive{
+    background-color: var(--yellow-3)!important;
+    color: var(--black-2)!important;
+    border: none!important;
+}
+
+.inactive:hover{
+    background-color: var(--black-2)!important;
+    color: var(--white-1)!important;
+}
+
+#recuperar{
+    color: var(--black-1);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#texto-cadastro, #texto-login{
+    transition: opacity 0.7s ease; /* Transição da opacidade do formulario de login e do formulario de cadastro */
+}
+
+#texto-cadastro{
+    opacity: 1;
+}
+
+#sem-hover:hover{
+    background-color: var(--yellow-2);
+}
+
+.invalid-feedback{
+    color: #e66868;
+    font-size: 16px;
+}
+
+.align-password-help{
+    margin-bottom: -5%;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.bg-yellow{
+    background-color: var(--yellow-2);
+}   
+
+@keyframes cross-rotate {
+    0% {
+      transform: rotateY(0deg);
+    }
+    25% {
+      transform: rotateY(90deg);
+    }
+    50% {
+      transform: rotateY(180deg);
+    }
+    75% {
+      transform: rotateY(270deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
