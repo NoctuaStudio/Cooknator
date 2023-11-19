@@ -24,6 +24,7 @@ fetch("http://localhost:8010/receita", {
                 div.classList.add('pt-md-4');
                 card.classList.add('card');
                 img.classList.add('img-fluid');
+                img.classList.add('tamanho-imagem')
                 cardBody.classList.add('card-body');
                 h4.classList.add('card-title');
                 p.classList.add('card-text');
