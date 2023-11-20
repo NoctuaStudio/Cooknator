@@ -4,8 +4,7 @@ body{
 }
 
 main{
-    height: auto;
-    width: 100%;
+    height: min-content!important;
 }
 
 footer{
@@ -14,5 +13,5 @@ footer{
 }
 
 .h-55vh{
-    height: 70vh!important;
+    height: 70vh;
 }
