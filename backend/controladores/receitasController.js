@@ -16,17 +16,23 @@ import { db } from "../db.js";
     })
  }
 
- export const getReceitasFiltro = (req, res) => { 
-    const q = "SELECT * FROM Receitas WHERE 1 = 1 ?";
+ export const postReceitasFiltro = (req, res) => { 
+    console.log("CHEGOU AQUI:"+req.body.Tipo)
+    
 
-    const filtros = ""
-    req.body.filtros.forEach(filtro => {
-    filtros =  "AND" + filtro
-    });
+    const q = "SELECT * FROM Receitas INNER JOIN Tipo_Receita ON Receitas.ID_Tipo = Tipo_Receita.ID WHERE  (?);";
+    
+    console.log("QUERY:    " + q)
+    
 
-    console.log(filtros)
+   const values= [
+    req.body.Tipo
+   ]
 
-    db.query(q, [filtros], (erro, data) => {
+   console.log ("? == " + values)
+
+
+    db.query(q, values, (erro, data) => {      
         if(erro) return res.json("Deu um erro aqui: "+ erro);
         return res.status(200).json(data);
     })

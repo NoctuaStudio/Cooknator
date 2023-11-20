@@ -10,7 +10,7 @@ const categorias = [];
 
 function atualizarNoFiltro(elemento, filtro) {
     console.log("CLICOU NO FILTRO")
-    console.log("LISTA DE FILTROS SELECIONADOS:"+ JSON.stringify(categorias))
+    
 
     if (!filtro.includes(elemento)) {
         filtro.push(elemento);
@@ -20,6 +20,9 @@ function atualizarNoFiltro(elemento, filtro) {
             filtro.splice(index, 1);
         }
     }
+    console.log("LISTA DE FILTROS SELECIONADOS:"+ JSON.stringify(categorias)) 
+    
+    
 }
 
 function tirarReceitas() {
@@ -32,6 +35,8 @@ function tirarReceitas() {
 }
 
 function preencherReceitas(receitas) {
+
+    console.log(" RECEITAS DO PREENCHER RECEITAS:" + receitas)
                 
     receitasMensagem.classList.add("d-none");
     receitasMensagem.classList.remove("d-flex");
@@ -67,12 +72,59 @@ function preencherReceitas(receitas) {
         })
     }}
 
+    function mostrarReceitasFiltradas()
+    {
+        filtrosConcatenados = ""
+        primeiro = true
+        categorias.forEach(categoria => {
+            if (primeiro) {
+            filtrosConcatenados = "Tipo_Receita.Tipo = "+"\'"+categoria+"\'"
+            }        
+            else{    
+            filtrosConcatenados = filtrosConcatenados+" OR Tipo_Receita.Tipo =  "+"\'"+categoria+"\'"
+            }
+            primeiro = false
+        });
+
+
+        console.log("FILTRO CONCATENADO: "+filtrosConcatenados)
+
+        
+        let values = {
+            Tipo: filtrosConcatenados
+         };
+        tirarReceitas();     
+
+        console.log("INDO FAZER O POST")
+        fetch("http://localhost:8010/receita/filtro", {
+    method: "POST", 
+    body: JSON.stringify(values),
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+.then(resposta => {
+    console.log('Resposta do servidor:', resposta);
+    return resposta.json();
+})
+.then(receitasFiltradas => {
+    console.log("CONSEGUI FAZER O POST", receitasFiltradas);
+    preencherReceitas(receitasFiltradas);
+})
+
+}
+
     // PROGRAMANDO OS FILTROS:
     console.log("CATEGORIAS =  "+ filtrosCategoriaHTML.length )
     console.log("LENDO FILTROS  ")
     for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
         console.log(LabelCategoriaHTML[index].textContent)
-        filtrosCategoriaHTML[index].addEventListener("click", () => {atualizarNoFiltro("Tipo = "+LabelCategoriaHTML[index].textContent, categorias)})
+
+        filtrosCategoriaHTML[index].addEventListener("change", () => {
+        atualizarNoFiltro(LabelCategoriaHTML[index].textContent, categorias)
+        mostrarReceitasFiltradas();
+
+        })
     }
 console.log("TERMINANDO DE ADICIONAR EVENTOS")
 
