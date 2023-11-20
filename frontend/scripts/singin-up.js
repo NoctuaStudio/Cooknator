@@ -169,5 +169,56 @@ function buscarUsuario(email, senha) {
         })        
     }
 
+
+// const emailCadastro = document.getElementById("emailCadastro")
+
+// formCadastro.addEventListener('submit', function (event) {
+//     event.preventDefault()
+//     console.log("Cadastro interrompido...")
+//     console.log("Indo verificar usuario");
+
+//     buscarEmailCadastro(emailLogin.value)
+//         .then(passou => {
+//             console.log("RESULTADO DO METODO: " + passou);
+
+
+//             if (!passou){
+//                 console.log(emailLogin.value)
+//                 //mostrarErroLogin();
+//                 event.stopPropagation()
+//                 console.log("Ja existe um usuário com esse email")
+//             }
+//             else{
+//                 console.log("Cadastro Passou!!!!!")
+//                 // EXISTE NO BANCO
+//                 // TODO FAZER O LOGIN PELO SESSION E COOKIES AQUI!!
+//             }
+//         })
+
+        
+//         .catch(erro => {
+//             mostrarErroLogin();
+//             console.error("Erro ao buscar usuário:", erro);
+//         });
+//     })
     
 
+// function buscarEmailCadastro(email) {
+
+//     let dados = {
+//         Email: email,       
+//     }
+//     console.log(JSON.stringify(dados))
+    
+//         return fetch("http://localhost:8010/usuario/cadastro", {
+//             method: "POST",
+//             body: JSON.stringify(dados),           
+//             headers:{
+//                 "Content-Type": "application/json"
+//             }}) 
+//         .then(resposta => resposta.json())
+//         .then(resultado => {
+//             console.log("RETORNANDO:" + resultado );
+//             return (resultado);
+//         })        
+//     }
