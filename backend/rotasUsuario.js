@@ -1,5 +1,5 @@
 import express from "express";
-import { getUsuarios, getUsuario, postLogin, postUsuarios, putUsuarios, deleteUsuarios, postCadastro } from "./controladores/usuarioController.js";
+import { getUsuarios, getUsuario, postLogin, postUsuarios, putUsuarios, deleteUsuarios } from "./controladores/usuarioController.js";
 
 const roteador = express.Router();
 
@@ -8,7 +8,6 @@ roteador.get("/:id", getUsuario)
 
 roteador.post("/", postUsuarios)
 roteador.post("/login", postLogin)
-//roteador.post("/cadastro", postCadastro)
 
 roteador.put("/:id", putUsuarios)
 

@@ -84,24 +84,4 @@ export const deleteUsuarios = (req, res) => {
 }
  
 
-// export const postCadastro = (req, res) => { 
-//     const q = "SELECT * FROM Usuarios WHERE Email = ?";
-
-//     const values = [
-//         req.body.Email,
-//     ]   
-
-//     db.query(q, [...values], (erro, data) => {
-//         if(erro){
-//             if(data.length != 0){
-//                 console.log(data)
-//                 return res.status(200).json(true);
-//             }
-//             else
-//                 return res.status(200).json(false);
-//         } 
-//         else{
-//             return res.json("Deu um erro aqui: "+ erro);
-//         }  
-//     })
-//  }   
+    
