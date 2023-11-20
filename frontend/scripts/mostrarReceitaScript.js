@@ -20,14 +20,21 @@ const receitaId = obterParametroDeConsulta('id');
 
             // PREPARANDO PARA EXIBIR A RECEITA:           
             
-
+            const modoPreparoHTML = document.getElementById("preparo-receita")
+            modoPreparoHTML.textContent = receita.Modo_de_Preparo
+            const tempoPreparoHTML = document.getElementById("tempo-receita")
+            tempoPreparoHTML.textContent = receita.Tempo_de_Preparo
+            const tamanhoHTML = document.getElementById("tamanho-receita")
+            tamanhoHTML.textContent = receita.Tamanho
             const nomeHTML = document.getElementById("nome-receita")
             nomeHTML.textContent = receita.Nome;
             const imgHTML = document.getElementById("imagem-receita")
             imgHTML.src = receita.Imagem;           
             const descricaoHTML = document.getElementById("descricao-receita")  
             descricaoHTML.textContent = receita.Descricao;
-            const categoriaHTML = document.getElementById("categoria-receita")  
+            const categoriaHTML = document.getElementById("categoria-receita") 
+            
+            
 
             fetch("http://localhost:8010/categoria/"+receitaId, {
                 method: "GET",          
