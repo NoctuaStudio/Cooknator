@@ -317,12 +317,14 @@
                     </div>
                     <div class="modal-body p-5 pt-0">
                         <form class="" id="formReceita">
-                            <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                                <div class="form-floating mb-3 col-6">
-                                    <input type="text" class="form-control rounded-3" id="nomeReceita" placeholder="name@example.com">
-                                    <label for="nomeReceita">Nome da Receita</label>
-                                </div>
-                                <div class="form-floating mb-3 col-5">
+                            
+                            <div class="mb-3 col-12">
+                                <label for="nomeReceita"><b>Nome da Receita</b></label>
+                                <input type="text" class="form-control rounded-3" id="nomeReceita" placeholder="name@example.com">
+                            </div>
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="mb-3 col-6">
+                                    <label for="tipoReceita"><b>Categoria</b></label>
                                     <select id="tipoReceita" class="form-control rounded-3" name="tipoReceita">
                                         <option value="0"> - </option>
                                         <option value="1"> Saladas </option>
@@ -336,150 +338,70 @@
                                         <option value="9"> Frango e outras Aves</option>
                                         <option value="10">Legumes e Verduras</option>
                                     </select>
-                                    <label for="tipoReceita">Categoria</label>
+                                </div>
+                                <div class="mb-3 col-5">
+                                    <label for="tempoReceita"><b>Tempo</b></label>
+                                    <input type="text" id="tempoReceita" class="form-control rounded-3" name="tempoReceita">
                                 </div>
                             </div>
                             <div class="d-flex flex-row justify-content-between">
-                                <div class="form-floating mb-3 col-4">
+                                <div class="mb-3 col-4">
+                                    <label for="tamanhoReceita"><b>Tamanho</b></label>
                                     <select id="tamanhoReceita" class="form-control rounded-3" name="tamanhoReceita">
                                         <option value="0"> - </option>
                                         <option value="Pequeno"> Pequeno </option>
                                         <option value="Medio"> Médio </option>
                                         <option value="Grande"> Grande </option>
                                     </select>
-                                    <label for="tamanhoReceita">Tamanho</label>
                                 </div>
-                                <div class="form-floating mb-3 col-7">
+                                <div class="mb-3 col-7">
+                                    <label for="dietaReceita"><b>Dieta</b></label>
                                     <select id="dietaReceita" class="form-control rounded-3" name="dietaReceita">
                                         <option value="nada"> - </option>
                                         <option value="Carnivoro"> Carnívoro </option>
                                         <option value="Vegetariano"> Vegetariano </option>
                                         <option value="Vegano"> Vegano </option>
                                     </select>
-                                    <label for="dietaReceita">Dieta</label>
                                 </div>              
                             </div>
-                            <div class="form-floating mb-3">
-                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
-                                <label for="floatingPassword"> Descrição </label>
-                            </div>
                             <div class="mb-3">
-                                <label> Ingredientes </label>
-                                <input type="list"  class="form-control rounded-3" id="ingrediente" name="ingrediente" list="ingredientes">
-                                <datalist id="ingredientes">
-                                    <option value="ovo"> Ovo </option>
-                                    <option value="farinha"> Farinha  </option>
-                                    <option value="leite"> Leite </option>
-                                    <option value="agua"> Água </option>
-                                    <option value="manteiga"> Manteiga </option>
-                                    <option value="sal"> Sal </option>
-                                    <option value="acucar"> Açucar </option>
-                                    <option value="fermento"> Fermento </option>
-                                    <option value="oleo"> Óleo </option>
-                                    <option value="bacon"> Bacon </option>
-                                    <option value="presunto"> Presunto </option>
-                                    <option value="queijo"> Queijo </option>
-                                    <option value="tomate"> Tomate </option>
-                                    <option value="cebola"> Cebola </option>
-                                    <option value="alho"> Alho </option>
-                                    <option value="pimenta"> Pimenta </option>
-                                    <option value="oregano"> Orégano </option>
-                                    <option value="manjericao"> Manjericão </option>
-                                    <option value="salsa"> Salsa </option>
-                                    <option value="coentro"> Coentro </option>
-                                    <option value="pimentao"> Pimentão </option>
-                                    <option value="cenoura"> Cenoura </option>
-                                    <option value="beterraba"> Beterraba </option>
-                                    <option value="abobrinha"> Abobrinha </option>
-                                    <option value="berinjela"> Berinjela </option>
-                                    <option value="abacate"> Abacate </option>
-                                    <option value="abacaxi"> Abacaxi </option>
-                                    <option value="banana"> Banana </option>
-                                    <option value="morango"> Morango </option>
-                                    <option value="laranja"> Laranja </option>
-                                    <option value="limao"> Limão </option>
-                                    <option value="uva"> Uva </option>
-                                    <option value="melancia"> Melancia </option>
-                                    <option value="melao"> Melão </option>
-                                    <option value="maca"> Maçã </option>
-                                    <option value="pera"> Pera </option>
-                                    <option value="pessego"> Pêssego </option>
-                                    <option value="ameixa"> Ameixa </option>
-                                    <option value="manga"> Manga </option>
-                                    <option value="goiaba"> Goiaba </option>
-                                    <option value="maracuja"> Maracujá </option>
-                                    <option value="caju"> Caju </option>
-                                    <option value="caqui"> Caqui </option>
-                                    <option value="coco"> Coco </option>
-                                    <option value="abobora"> Abóbora </option>
-                                    <option value="batata"> Batata </option>
-                                    <option value="mandioca"> Mandioca </option>
-                                    <option value="mandioquinha"> Mandioquinha </option>
-                                    <option value="inhame"> Inhame </option>
-                                    <option value="carne"> Carne </option>
-                                    <option value="frango"> Frango </option>
-                                    <option value="porco"> Porco </option>
-                                    <option value="peixe"> Peixe </option>
-                                    <option value="camarao"> Camarão </option>
-                                    <option value="lagosta"> Lagosta </option>
-                                    <option value="caranguejo"> Caranguejo </option>
-                                    <option value="siri"> Siri </option>
-                                    <option value="bacalhau"> Bacalhau </option>
-                                    <option value="atum"> Atum </option>
-                                    <option value="sardinha"> Sardinha </option>
-                                    <option value="salmao"> Salmão </option>
-                                    <option value="tilapia"> Tilápia </option>
-                                    <option value="truta"> Truta </option>
-                                    <option value="pintado"> Pintado </option>
-                                    <option value="dourado"> Dourado </option>
-                                    <option value="pescada"> Pescada </option>
-                                    <option value="linguado"> Linguado </option>
-                                    <option value="tucunare"> Tucunaré </option>
-                                    <option value="picanha"> Picanha </option>
-                                    <option value="alcatra"> Alcatra </option>
-                                    <option value="maminha"> Maminha </option>
-                                    <option value="contra-filé"> Contra-filé </option>
-                                    <option value="filé-mignon"> Filé-mignon </option>
-                                    <option value="fraldinha"> Fraldinha </option>
-                                    <option value="costela"> Costela </option>
-                                    <option value="cupim"> Cupim </option>
-                                    <option value="patinho"> Patinho </option>
-                                    <option value="coxao-mole"> Coxão-mole </option>
-                                    <option value="coxao-duro"> Coxão-duro </option>
-                                    <option value="lagarto"> Lagarto </option>
-                                    <option value="músculo"> Músculo </option>
-                                    <option value="acem"> Acém </option>
-                                    <option value="paleta"> Paleta </option>
-                                    <option value="peitoFrango"> Peito de Frango </option>
-                                    <option value="costela"> Costela </option>
-                                    <option value="asaFrango"> Asa de Frango </option>
-                                    <option value="coxaFrango"> Coxa de Frango </option>
-                                    <option value="sobrecoxaFrango"> Sobrecoxa de Frango </option>
-                                    <option value="coracaoFrango"> Coração de Frango </option>
-                                    <option value="fígadoFrango"> Fígado de Frango </option>
-                                    <option value="moelaFrango"> Moela de Frango </option>
-                                    <option value="peru"> Peru </option>
-                                    <option value="pato"> Pato </option>
-                                    <option value="frango"> Frango </option>
-                                    <option value="galinha"> Galinha </option>
-                                    <option value="chocolate"> Chocolate </option> 
-                                    <option value="leiteCondensado"> Leite Condensado </option>
-                                    <option value="gelo"> Gelo </option>
-                                    <option value="canela"> Canela </option>
-                                    <option value="cravo"> Cravo </option>
-                                    <option value="nozMosca"> Noz Moscada </option>
-                                    <option value="baunilha"> Baunilha </option>
-                                </datalist>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <textarea name="" id="descricaoReceita" cols="30" rows="10" class="rounded-3 form-control"></textarea>
-                                <label for="floatingPassword"> Modo de Preparo</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control rounded-3" id="imagemReceita" placeholder="name@example.com">
-                                <label for="imagemReceita">Imagem</label>
+                                <label for="descricaoReceita"><b>Descrição</b></label>
+                                <textarea name="descricaoReceita" id="descricaoReceita" cols="30" rows="2" class="rounded-3 form-control"></textarea>
+                                
                             </div>
                             
+                            <div class=" mb-3">
+                                <label for="preparaReceita"><b>Modo de Preparo</b></label>
+                                <textarea name="" id="preparaReceita" cols="30" rows="2" class="rounded-3 form-control"></textarea>
+                            </div>
+                            <div class="mb-3 bg-yellow rounded-2 p-2">
+                                <label for="ingredientes" class="mb-2"><b>Ingredientes:</b></label>
+                                <div id="inputsIngredientes" class="d-flex flex-column">
+                                    <div class="d-flex flex-row justify-content-between align-items-center mb-2 mt-2 w-100">
+                                        <div class="col-10">
+                                            <input type="list"  class="form-control rounded-3 col-6" id="ingrediente1" name="ingrediente1" list="ingredientes">
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-dark d-flex justify-content-center align-items-center" id="btnRemoverIngrediente1">
+                                                <svg class="text-light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <datalist id="ingredientes">
+                                    <option value="arroz"></option>
+                                </datalist>
+                                <div class="mt-2">
+                                    <button type="button" class="btn btn-dark col-12"><img src="../midia/plus-circle.png" width="20px" height="20px" alt="" id="btnAdcionarIngrediente"></button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="imagemReceita"><b>Imagem</b></label>
+                                <input type="text" class="form-control rounded-3" id="imagemReceita" placeholder="https://minhaimagem.com">
+                            </div>
                             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-dark" type="submit" id="receitaButton">Criar</button>
                         </form>
                     </div>

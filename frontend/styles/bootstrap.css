@@ -64,7 +64,7 @@
 
 
 .modal-content{
-    background-color: #FFECAA;
+    background-color: #ebd06e;
 }
 
 .form-check-input:checked{
@@ -102,4 +102,7 @@
     opacity: 1!important;
   }
 
+.bg-black{
+    background-color:#242424!important;
+}
   
