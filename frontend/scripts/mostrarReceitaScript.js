@@ -24,8 +24,9 @@ const receitaId = obterParametroDeConsulta('id');
             const nomeHTML = document.getElementById("nome-receita")
             nomeHTML.textContent = receita.Nome;
             const imgHTML = document.getElementById("imagem-receita")
-            imgHTML.src = receita.Imagem;
-            const 
+            imgHTML.src = receita.Imagem;           
+            const descricaoHTML = document.getElementById("descricao-receita")  
+            descricaoHTML.textContent = receita.Descricao;
             });
 
 
