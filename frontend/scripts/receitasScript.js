@@ -9,7 +9,8 @@ const categorias = [];
 
 
 function atualizarNoFiltro(elemento, filtro) {
-    console.log(JSON.stringify(categorias))
+    console.log("CLICOU NO FILTRO")
+    console.log("LISTA DE FILTROS SELECIONADOS:"+ JSON.stringify(categorias))
 
     if (!filtro.includes(elemento)) {
         filtro.push(elemento);
@@ -70,9 +71,10 @@ function preencherReceitas(receitas) {
     console.log("CATEGORIAS =  "+ filtrosCategoriaHTML.length )
     console.log("LENDO FILTROS  ")
     for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
-        filtrosCategoriaHTML[index].addEventListener("select", atualizarNoFiltro(LabelCategoriaHTML.textContent, categorias))
+        console.log(LabelCategoriaHTML[index].textContent)
+        filtrosCategoriaHTML[index].addEventListener("select", atualizarNoFiltro("Tipo = "+LabelCategoriaHTML[index].textContent, categorias))
     }
-
+console.log("TERMINANDO DE ADICIONAR EVENTOS")
 
 
 
