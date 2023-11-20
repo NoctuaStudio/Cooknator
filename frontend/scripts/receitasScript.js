@@ -33,12 +33,12 @@ function tirarReceitas() {
     }
     receitasMensagem.classList.remove("d-none");
     receitasMensagem.classList.add("d-flex");
-    divGigante.classList.add("h-55vh");
+    //divGigante.classList.add("h-55vh");
 }
 
 function preencherReceitas(receitas) {
     console.log(" RECEITAS DO PREENCHER RECEITAS:" + receitas)
-    divGigante.classList.remove("h-55vh");
+    //divGigante.classList.remove("h-55vh");
     receitasMensagem.classList.add("d-none");
     receitasMensagem.classList.remove("d-flex");
     for (let i = 0; i < receitas.length; i++) {
@@ -139,6 +139,7 @@ fetch("http://localhost:8010/receita", {
             }}) 
         .then(resposta => resposta.json())
         .then(receitas => {
+            console.log("COLOCANDO RECEITAS PADRAO")
             preencherReceitas(receitas);
         })
 
