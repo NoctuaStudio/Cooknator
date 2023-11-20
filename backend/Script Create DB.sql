@@ -189,30 +189,32 @@ VALUES
 INSERT INTO Ingredientes_Da_Receita (ID_Receita, ID_Ingrediente, Quantidade)
 VALUES
 -- Alface
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Alface'), '1 maço'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Alface' LIMIT 1), '1 maço'),
 
 -- Tomate
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Tomate'), '2 unidades'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Tomate' LIMIT 1), '2 unidades'),
 
 -- Peito de Frango
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Peito de Frango'), '200g'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Peito de Frango' LIMIT 1), '200g'),
 
 -- Cenoura
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Cenoura'), '1 unidade'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Cenoura' LIMIT 1), '1 unidade'),
 
 -- Queijo Parmesão
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Queijo Parmesão'), '50g'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Queijo Parmesão' LIMIT 1), '50g'),
 
 -- Molho de Tomate
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Molho de Tomate'), '2 colheres de sopa'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Molho de Tomate' LIMIT 1), '2 colheres de sopa'),
 
 -- Sal
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Sal'), 'a gosto'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Sal' LIMIT 1), 'a gosto'),
 
 -- Pimenta
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Pimenta do Reino'), 'a gosto');
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Pimenta do Reino' LIMIT 1), 'a gosto');
 
 SELECT * FROM Receitas;
+
+SELECT * FROM Ingredientes_Da_Receita;
 
 
 
