@@ -72,7 +72,7 @@ function preencherReceitas(receitas) {
     console.log("LENDO FILTROS  ")
     for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
         console.log(LabelCategoriaHTML[index].textContent)
-        filtrosCategoriaHTML[index].addEventListener("select", atualizarNoFiltro("Tipo = "+LabelCategoriaHTML[index].textContent, categorias))
+        filtrosCategoriaHTML[index].addEventListener("click", () => {atualizarNoFiltro("Tipo = "+LabelCategoriaHTML[index].textContent, categorias)})
     }
 console.log("TERMINANDO DE ADICIONAR EVENTOS")
 
