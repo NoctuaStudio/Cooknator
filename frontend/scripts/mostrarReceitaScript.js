@@ -27,6 +27,21 @@ const receitaId = obterParametroDeConsulta('id');
             imgHTML.src = receita.Imagem;           
             const descricaoHTML = document.getElementById("descricao-receita")  
             descricaoHTML.textContent = receita.Descricao;
+            const categoriaHTML = document.getElementById("categoria-receita")  
+
+            fetch("http://localhost:8010/categoria/"+receitaId, {
+                method: "GET",          
+                headers:{
+                    "Content-Type": "application/json"
+                }}) 
+                .then(resposta => resposta.json())
+                .then(categorias => {
+                    categoriaHTML.textContent = categorias[0]
+                    console.log(JSON.stringify(categorias))
+                })
+
+
+            
             });
 
 

@@ -10,10 +10,10 @@ fetch("http://localhost:8010/ingrediente", {
                 console.log(JSON.stringify(ingrediente))
                 // AQUI 
 
-                receitas.forEach(ingrediente => {
-                    var ingrediente = document.createElement('option');
-                    ingrediente.value = ingrediente.Nome;
-                    dataList.appendChild(ingrediente);
+                ingrediente.forEach(ingredient => {
+                    var opcao = document.createElement('option');
+                    opcao.value = ingredient.Nome;
+                    dataList.appendChild(opcao);
                   
                 });
 
