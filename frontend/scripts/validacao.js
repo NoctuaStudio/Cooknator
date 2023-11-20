@@ -167,16 +167,38 @@ cadastrarBtn.addEventListener('mouseover', function (event) {
     }
 })
 
+
+
 formCadastro.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Teste -")
     let validado2 = true;
-    validações.forEach(validação => {
+
+    let existeComEmail=false;
+    fetch("http://localhost:8010/usuario", {
+        method: "GET",
+        body: JSON.stringify(dados),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(usuarios =>  {
+        usuarios.forEach(usuario => {
+           if (usuario.Email == emailCadastro) {
+            existeComEmail = true
+           } 
+        });
+        
+    })
+    
+
+    validações.forEach(validação => {        
         if (!validação) {
             validado2 = false;
         }
     });
-    if (!validado2) {        
+    if (!validado2 || existeComEmail) {        
         event.stopPropagation()
     } else{
         let dados = {
