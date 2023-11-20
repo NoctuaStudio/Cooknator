@@ -42,3 +42,4 @@ formReceita.addEventListener('submit', function (event) {
     .then(resultado => console.log(resultado))
     //}
 })
+

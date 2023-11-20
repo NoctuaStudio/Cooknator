@@ -26,24 +26,6 @@ header{
     align-items: center;
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px;
-    padding: 10px;
-}
-
-.buttons button{
-    width: 100px;
-    height: 50px;
-    border-radius: 20px;
-    border: 2px solid var(--black-1);
-    background-color: var(--white-1);
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 #login-card{
     display: none;
 }
@@ -64,45 +46,6 @@ header{
 
 .rotate-cross {
   animation: cross-rotate 1.5s forwards ease-in-out;
-}
-
-.buttons{
-    display: flex;
-    justify-content: space-evenly;
-    margin: 10px;
-    padding: 10px;
-    align-items: end;
-}
-
-.buttons button{
-    width: 100px;
-    height: 50px;
-    border-radius: 20px;
-    border: 2px solid var(--black-1);
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.buttons button:hover{
-    background-color: var(--black-1);
-    color: var(--white-1);
-}
-
-.active{
-    background-color: var(--black-2)!important;
-    color: var(--white-1)!important;
-}
-
-.inactive{
-    background-color: var(--yellow-3)!important;
-    color: var(--black-2)!important;
-    border: none!important;
-}
-
-.inactive:hover{
-    background-color: var(--black-2)!important;
-    color: var(--white-1)!important;
 }
 
 #recuperar{
@@ -133,10 +76,6 @@ header{
     display: flex; 
     justify-content: space-between;
 }
-
-.bg-yellow{
-    background-color: var(--yellow-2);
-}   
 
 @keyframes cross-rotate {
     0% {
