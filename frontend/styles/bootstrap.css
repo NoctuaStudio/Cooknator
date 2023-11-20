@@ -12,6 +12,9 @@
     }
   }
   
+  a{
+    text-decoration-line: none!important;
+  }
 
   .b-example-divider {
     width: 100%;
