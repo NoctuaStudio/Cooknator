@@ -1,4 +1,4 @@
-let validações = [false, false, false, false, false, false]
+let validações = [false, false, false, false, false, false, false]
 
 const nomeCadastro = document.getElementById("nomeCadastro")
 const invalid = document.getElementById("erroNomeCadastro")
@@ -79,13 +79,22 @@ const MensagemEmailCadastro = document.getElementById("MensagemEmailCadastro")
 emailCadastro.addEventListener("keyup", () => {
     const valor = emailCadastro.value;
     validações[3] = validateEmail(valor);
+    validações[4] = verificarEmail(valor);
     
-    if( validações[3]){
+    if(validações[3] && !validações[4]){
         erroEmailCadastro.classList.remove("invalid-feedback")
         erroEmailCadastro.classList.add("valid-feedback")
         emailCadastro.style.border = "2px solid green"
         MensagemEmailCadastro.innerText = ""  
-    }else{
+    }
+    else if(validações[4]){
+        erroEmailCadastro.style.display="block"
+        erroEmailCadastro.classList.remove("valid-feedback")
+        erroEmailCadastro.classList.add("invalid-feedback")
+        emailCadastro.style.border = "2px solid red"
+        MensagemEmailCadastro.innerText = "Email já cadastrado"
+    }
+    else {
         erroEmailCadastro.style.display="block"
         erroEmailCadastro.classList.remove("valid-feedback")
         erroEmailCadastro.classList.add("invalid-feedback")
@@ -93,6 +102,29 @@ emailCadastro.addEventListener("keyup", () => {
         MensagemEmailCadastro.innerText = "Email inválido"
     }
 })
+
+function verificarEmail(email) {
+    let dados = {
+        Email: email
+    }
+    return fetch("http://localhost:8010/usuario", {
+        method: "GET",
+        body: JSON.stringify(dados),
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(usuarios =>  {
+        usuarios.forEach(usuario => {
+              if (usuario.Email == email) {
+                return true
+                }
+            });
+        return false
+    })
+}
+
 
 function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
@@ -107,9 +139,9 @@ const MensagemSenhaCadastro = document.getElementById("MensagemSenhaCadastro")
 
 senhaCadastro.addEventListener("keyup", () => {
     const valor = senhaCadastro.value;
-    validações[4] = valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
+    validações[5] = valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
     
-    if( validações[4]){
+    if( validações[5]){
         erroSenhaCadastro.classList.remove("invalid-feedback")
         erroSenhaCadastro.classList.add("valid-feedback")
         senhaCadastro.style.border = "2px solid green"  
@@ -131,9 +163,9 @@ const MensagemConfirmarCadastro = document.getElementById("MensagemConfirmarCada
 
 confirmarCadastro.addEventListener("keyup", () => {
     const valor = confirmarCadastro.value;
-    validações[5] = valor===senhaCadastro.value && valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
+    validações[6] = valor===senhaCadastro.value && valor.length >= 8 && valor.length <= 20 && /[0-9]/.test(valor) && /[a-z]/.test(valor) && /[A-Z]/.test(valor) && /[!|@|#|$|%|^|&|*|(|)|-|_]/.test(valor);
     
-    if( validações[5]){
+    if( validações[6]){
         erroConfirmarCadastro.classList.remove("invalid-feedback")
         erroConfirmarCadastro.classList.add("valid-feedback")
         confirmarCadastro.style.border = "2px solid green"
