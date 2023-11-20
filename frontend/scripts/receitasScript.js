@@ -10,7 +10,7 @@ const categorias = [];
 
 function atualizarNoFiltro(elemento, filtro) {
     console.log("CLICOU NO FILTRO");
-    console.log("LISTA DE FILTROS SELECIONADOS:" + JSON.stringify(categorias));
+    
 
     if (!filtro.includes(elemento)) {
         filtro.push(elemento);
@@ -20,6 +20,7 @@ function atualizarNoFiltro(elemento, filtro) {
             filtro.splice(index, 1);
         }
     }
+    console.log("LISTA DE FILTROS SELECIONADOS:" + JSON.stringify(categorias));
 }
 
 function tirarReceitas() {
@@ -94,7 +95,7 @@ function preencherReceitas(receitas) {
     console.log("LENDO FILTROS  ");
     for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
         console.log(LabelCategoriaHTML[index].textContent);
-        filtrosCategoriaHTML[index].addEventListener("click", () => {
+        filtrosCategoriaHTML[index].addEventListener("change", () => {
             atualizarNoFiltro("Tipo = " + LabelCategoriaHTML[index].textContent, categorias);
         });
     }
