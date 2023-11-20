@@ -36,7 +36,7 @@ const receitaId = obterParametroDeConsulta('id');
                 }}) 
                 .then(resposta => resposta.json())
                 .then(categorias => {
-                    categoriaHTML.textContent = categorias[0]
+                    categoriaHTML.textContent = categorias[0].Tipo
                     console.log(JSON.stringify(categorias))
                 })
 
