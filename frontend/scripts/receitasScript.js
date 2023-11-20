@@ -1,6 +1,7 @@
 console.log("ABRIU A PÁGINA")
 console.log("Tentando carregar 3 receitas")
 
+const divGigante = document.getElementById("divGigante");
 const receitasHTML = document.getElementsByClassName("product-list")[0];
 const receitasMensagem = document.getElementById("receitasMensagem");
 const filtrosCategoriaHTML = document.querySelectorAll('[name="FiltroCategoria"]');
@@ -29,10 +30,11 @@ function tirarReceitas() {
     }
     receitasMensagem.classList.remove("d-none");
     receitasMensagem.classList.add("d-flex");
+    divGigante.classList.add("h-55vh");
 }
 
 function preencherReceitas(receitas) {
-                
+    divGigante.classList.remove("h-55vh");
     receitasMensagem.classList.add("d-none");
     receitasMensagem.classList.remove("d-flex");
     for (let i = 0; i < receitas.length; i++) {
