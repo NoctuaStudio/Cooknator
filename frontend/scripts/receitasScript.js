@@ -1,7 +1,6 @@
 console.log("ABRIU A PÁGINA")
 console.log("Tentando carregar 3 receitas")
 
-const divGigante = document.getElementById("divGigante");
 const receitasHTML = document.getElementsByClassName("product-list")[0];
 const receitasMensagem = document.getElementById("receitasMensagem");
 const filtrosCategoriaHTML = document.querySelectorAll('[name="FiltroCategoria"]');
@@ -33,12 +32,13 @@ function tirarReceitas() {
     }
     receitasMensagem.classList.remove("d-none");
     receitasMensagem.classList.add("d-flex");
-    divGigante.classList.add("h-55vh");
 }
 
 function preencherReceitas(receitas) {
-    console.log(" RECEITAS DO PREENCHER RECEITAS:" + receitas)
-    divGigante.classList.remove("h-55vh");
+    console.log ("PREENCHENDO RECEITAS:" + receitas)
+
+    
+                
     receitasMensagem.classList.add("d-none");
     receitasMensagem.classList.remove("d-flex");
     for (let i = 0; i < receitas.length; i++) {
@@ -73,28 +73,42 @@ function preencherReceitas(receitas) {
         })
     }}
 
+    function receitasPadrao() {
+        fetch("http://localhost:8010/receita", {
+                    method: "GET",          
+                    headers:{
+                        "Content-Type": "application/json"
+                    }}) 
+                .then(resposta => resposta.json())
+                .then(receitas => {
+                    //console.log("Exibindo todas as receitas:" +JSON.stringify(receitas))
+                    preencherReceitas(receitas);
+                })
+            }
+
     function mostrarReceitasFiltradas()
     {
         filtrosConcatenados = ""
         primeiro = true
+        if (categorias.length==0) {
+            receitasPadrao()
+        }
         categorias.forEach(categoria => {
             if (primeiro) {
-            filtrosConcatenados = "Tipo_Receita.Tipo = "+"\'"+categoria+"\'"
+            filtrosConcatenados = categoria
             }        
             else{    
-            filtrosConcatenados = filtrosConcatenados+" OR Tipo_Receita.Tipo =  "+"\'"+categoria+"\'"
+            filtrosConcatenados = filtrosConcatenados+" OR "+categoria
             }
             primeiro = false
         });
-
-
         console.log("FILTRO CONCATENADO: "+filtrosConcatenados)
 
         
         let values = {
             Tipo: filtrosConcatenados
          };
-        tirarReceitas();     
+            
 
         console.log("INDO FAZER O POST")
         fetch("http://localhost:8010/receita/filtro", {
@@ -115,6 +129,8 @@ function preencherReceitas(receitas) {
 
 }
 
+    receitasPadrao();
+
     // PROGRAMANDO OS FILTROS:
     console.log("CATEGORIAS =  "+ filtrosCategoriaHTML.length )
     console.log("LENDO FILTROS  ")
@@ -123,6 +139,7 @@ function preencherReceitas(receitas) {
 
         filtrosCategoriaHTML[index].addEventListener("change", () => {
         atualizarNoFiltro(LabelCategoriaHTML[index].textContent, categorias)
+        tirarReceitas();
         mostrarReceitasFiltradas();
 
         })
@@ -132,15 +149,6 @@ console.log("TERMINANDO DE ADICIONAR EVENTOS")
 
 
     
-fetch("http://localhost:8010/receita", {
-            method: "GET",          
-            headers:{
-                "Content-Type": "application/json"
-            }}) 
-        .then(resposta => resposta.json())
-        .then(receitas => {
-            preencherReceitas(receitas);
-        })
 
    
                 
