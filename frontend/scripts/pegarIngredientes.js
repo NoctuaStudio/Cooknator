@@ -1,3 +1,4 @@
+const dataList = document.getElementById('ingredientes');
 
 fetch("http://localhost:8010/ingrediente", {
                 method: "GET",          
@@ -10,8 +11,10 @@ fetch("http://localhost:8010/ingrediente", {
                 // AQUI 
 
                 receitas.forEach(ingrediente => {
-                    
-                    //<Option> ingrediente </Option>
+                    var ingrediente = document.createElement('option');
+                    ingrediente.value = ingrediente.Nome;
+                    dataList.appendChild(ingrediente);
+                  
                 });
 
 
