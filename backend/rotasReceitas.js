@@ -1,10 +1,12 @@
 import express from "express";
-import { getReceitas, getReceita, postReceitas, putReceitas, deleteReceitas } from "./controladores/receitasController.js";
+import { getReceitas, getReceita, getReceitasFiltro, postReceitas, putReceitas, deleteReceitas } from "./controladores/receitasController.js";
 
 const roteador = express.Router();
 
 roteador.get("/", getReceitas)
 roteador.get("/:id", getReceita)
+roteador.get("/filtro", getReceitasFiltro)
+
 
 roteador.post("/", postReceitas)
 

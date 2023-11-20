@@ -16,6 +16,23 @@ import { db } from "../db.js";
     })
  }
 
+ export const getReceitasFiltro = (req, res) => { 
+    const q = "SELECT * FROM Receitas WHERE 1 = 1 ?";
+
+    const filtros = ""
+    req.body.filtros.forEach(filtro => {
+    filtros =  "AND" + filtro
+    });
+
+    console.log(filtros)
+
+    db.query(q, [filtros], (erro, data) => {
+        if(erro) return res.json("Deu um erro aqui: "+ erro);
+        return res.status(200).json(data);
+    })
+ }
+
+
  
  export const postReceitas = (req, res) => {
     const q =  "INSERT INTO Receitas (Nome, Descricao, ID_Tipo, Imagem, Avaliacao, ID_Usuario, Tamanho, Dieta) VALUES(?)";

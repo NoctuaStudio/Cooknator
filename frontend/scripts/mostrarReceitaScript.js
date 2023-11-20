@@ -39,9 +39,6 @@ const receitaId = obterParametroDeConsulta('id');
                     categoriaHTML.textContent = categorias[0].Tipo
                     console.log(JSON.stringify(categorias))
                 })
-
-
-            
             });
 
 
