@@ -69,6 +69,7 @@
     border: none;
 }
 
+
 .inactive{
     background-color: var(--yellow-3)!important;
     color: var(--black-2)!important;
