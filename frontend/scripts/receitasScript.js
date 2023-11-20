@@ -38,7 +38,13 @@ fetch("http://localhost:8010/receita", {
                 card.appendChild(cardBody);
                 cardBody.appendChild(h4);
                 cardBody.appendChild(p);
-                receitasHTML.appendChild(div);    
+                receitasHTML.appendChild(div);   
+                
+                div.addEventListener('click', function (event) {
+                    const receitaId = receitas[i].ID; // Substitua isso com o ID ou identificador da receita
+                    location.href = `receita.html?id=${receitaId}`;
+                });
+                
                           
             }})      
           
