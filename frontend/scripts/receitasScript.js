@@ -9,12 +9,12 @@ const categorias = [];
 
 
 function atualizarNoFiltro(elemento, filtro) {
-    console.log("CLICOU NO FILTRO")
-    console.log("LISTA DE FILTROS SELECIONADOS:"+ JSON.stringify(categorias))
+    console.log("CLICOU NO FILTRO");
+    console.log("LISTA DE FILTROS SELECIONADOS:" + JSON.stringify(categorias));
 
     if (!filtro.includes(elemento)) {
         filtro.push(elemento);
-    } else {        
+    } else {
         const index = filtro.indexOf(elemento);
         if (index > -1) {
             filtro.splice(index, 1);
@@ -23,13 +23,35 @@ function atualizarNoFiltro(elemento, filtro) {
 }
 
 function tirarReceitas() {
-    
     while (receitasHTML.firstChild) {
         receitasHTML.removeChild(receitasHTML.firstChild);
     }
     receitasMensagem.classList.remove("d-none");
     receitasMensagem.classList.add("d-flex");
 }
+
+// PROGRAMANDO OS FILTROS:
+console.log("CATEGORIAS =  " + filtrosCategoriaHTML.length);
+console.log("LENDO FILTROS  ");
+for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
+    console.log(LabelCategoriaHTML[index].textContent);
+    filtrosCategoriaHTML[index].addEventListener("click", () => {
+        atualizarNoFiltro("Tipo = " + LabelCategoriaHTML[index].textContent, categorias);
+    });
+}
+console.log("TERMINANDO DE ADICIONAR EVENTOS");
+
+fetch("http://localhost:8010/receita", {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json"
+    }
+})
+    .then(resposta => resposta.json())
+    .then(receitas => {
+        tirarReceitas();
+        preencherReceitas(receitas);
+    });
 
 function preencherReceitas(receitas) {
                 
@@ -68,16 +90,15 @@ function preencherReceitas(receitas) {
     }}
 
     // PROGRAMANDO OS FILTROS:
-    console.log("CATEGORIAS =  "+ filtrosCategoriaHTML.length )
-    console.log("LENDO FILTROS  ")
+    console.log("CATEGORIAS =  " + filtrosCategoriaHTML.length);
+    console.log("LENDO FILTROS  ");
     for (let index = 0; index < filtrosCategoriaHTML.length; index++) {
-        console.log(LabelCategoriaHTML[index].textContent)
-        filtrosCategoriaHTML[index].addEventListener("click", () => {atualizarNoFiltro("Tipo = "+LabelCategoriaHTML[index].textContent, categorias)})
+        console.log(LabelCategoriaHTML[index].textContent);
+        filtrosCategoriaHTML[index].addEventListener("click", () => {
+            atualizarNoFiltro("Tipo = " + LabelCategoriaHTML[index].textContent, categorias);
+        });
     }
-console.log("TERMINANDO DE ADICIONAR EVENTOS")
-
-
-
+    console.log("TERMINANDO DE ADICIONAR EVENTOS");
     
 fetch("http://localhost:8010/receita", {
             method: "GET",          
