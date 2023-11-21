@@ -23,8 +23,16 @@ btnAdicionar.addEventListener('click', function (event) {
     divIngredienteERemover.classList.add("align-items-center");
     divIngredienteERemover.classList.add("mb-2");
     divIngredienteERemover.classList.add("mt-2");
+    let divQuantidade = document.createElement("div");
+    divQuantidade.classList.add("col-4");
+    let novaQuantidade = document.createElement("input");
+    novaQuantidade.setAttribute("type", "text");
+    novaQuantidade.setAttribute("id", `quantidade${contador}`);
+    novaQuantidade.classList.add("form-control");
+    novaQuantidade.classList.add("rounded-3");
+    novaQuantidade.classList.add("col-4");
     let divIngrediente = document.createElement("div");
-    divIngrediente.classList.add("col-10");
+    divIngrediente.classList.add("col-6");
     let novoIngrediente = document.createElement("input");
     novoIngrediente.setAttribute("type", "list");
     novoIngrediente.setAttribute("id", `ingrediente${contador}`);
@@ -42,9 +50,11 @@ btnAdicionar.addEventListener('click', function (event) {
     btnRemover.classList.add("align-items-center");
     btnRemover.setAttribute("id", `btnRemoverIngrediente${contador}`);
     btnRemover.innerHTML = `<svg class="text-light" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>`;
+    divQuantidade.appendChild(novaQuantidade);
     divIngrediente.appendChild(novoIngrediente);
     divRemover.appendChild(btnRemover);
     divIngredienteERemover.appendChild(divIngrediente);
+    divIngredienteERemover.appendChild(divQuantidade);
     divIngredienteERemover.appendChild(divRemover);
     btnRemover.addEventListener('click', function (event) {
         divIngredienteERemover.remove()
@@ -93,10 +103,10 @@ formReceita.addEventListener('submit', function (event) {
     .then(resultado => console.log(resultado))
     
     console.log("Teste ingredientes - ")
-    fetch("http://localhost:8010/receita/"+ , {
+    fetch("http://localhost:8010/receita/", {
         method: "GET",
         headers:{
             "Content-Type": "application/json"
         }
+    })
 })
-
