@@ -72,11 +72,32 @@ function preencherReceitas(receitas) {
             location.href = `receita.html?id=${receitaId}`;
         })
     }}
+    function receitasPadrao() {
+   
+    fetch("http://localhost:8010/receita", {
+            method: "GET",          
+            headers:{
+                "Content-Type": "application/json"
+            }}) 
+        .then(resposta => resposta.json())
+        .then(receitas => {
+            console.log("COLOCANDO RECEITAS PADRAO")
+            preencherReceitas(receitas);
+        })
+    }
+
+    
+
+
 
     function mostrarReceitasFiltradas()
     {
         filtrosConcatenados = ""
         primeiro = true
+        if (categorias.length==0) {
+            receitasPadrao()
+            return;            
+        }
         categorias.forEach(categoria => {
             if (primeiro) {
             filtrosConcatenados = "Tipo_Receita.Tipo = "+"\'"+categoria+"\'"
@@ -115,6 +136,8 @@ function preencherReceitas(receitas) {
 
 }
 
+receitasPadrao()
+
     // PROGRAMANDO OS FILTROS:
     console.log("CATEGORIAS =  "+ filtrosCategoriaHTML.length )
     console.log("LENDO FILTROS  ")
@@ -123,6 +146,7 @@ function preencherReceitas(receitas) {
 
         filtrosCategoriaHTML[index].addEventListener("change", () => {
         atualizarNoFiltro(LabelCategoriaHTML[index].textContent, categorias)
+        tirarReceitas();
         mostrarReceitasFiltradas();
 
         })
@@ -131,17 +155,8 @@ console.log("TERMINANDO DE ADICIONAR EVENTOS")
 
 
 
-    
-fetch("http://localhost:8010/receita", {
-            method: "GET",          
-            headers:{
-                "Content-Type": "application/json"
-            }}) 
-        .then(resposta => resposta.json())
-        .then(receitas => {
-            console.log("COLOCANDO RECEITAS PADRAO")
-            preencherReceitas(receitas);
-        })
+        
+
 
    
                 
