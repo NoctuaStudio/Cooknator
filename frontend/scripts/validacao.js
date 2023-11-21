@@ -76,11 +76,36 @@ const erroEmailCadastro = document.getElementById("erroEmailCadastro")
 const MensagemEmailCadastro = document.getElementById("MensagemEmailCadastro")
 
 
-emailCadastro.addEventListener("keyup", () => {
+emailCadastro.addEventListener("input", () => {
     const valor = emailCadastro.value;
     validações[3] = validateEmail(valor);
-    validações[4] = verificarEmail(valor);
-    
+
+    fetch("http://localhost:8010/usuario", {
+        method: "GET",
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(usuarios =>  {
+        let existe = false
+        validações[4] = false
+        console.log("VERIFICANDO EMAIL")
+        console.log("USUARIOS:"+ JSON.stringify(usuarios))
+
+        usuarios.forEach(usuario => {
+              if (usuario.Email == valor    ) {
+                console.log("JA EXISTE ESSE EMAIL!!")
+                existe = true
+                validações[4] = true
+                }
+            });
+            if (existe==false) {
+                console.log("NAO EXISTE ESSE EMAIL!!")
+                validações[4] = false 
+            }
+       
+    console.log("valor validação:" + validações[4])     
     if(validações[3] && !validações[4]){
         erroEmailCadastro.classList.remove("invalid-feedback")
         erroEmailCadastro.classList.add("valid-feedback")
@@ -102,32 +127,9 @@ emailCadastro.addEventListener("keyup", () => {
         MensagemEmailCadastro.innerText = "Email inválido"
     }
 })
+})
 
-function verificarEmail(email) {
-    return fetch("http://localhost:8010/usuario", {
-        method: "GET",
-        headers:{
-            "Content-Type": "application/json"
-        }
-    })
-    .then(resposta => resposta.json())
-    .then(usuarios =>  {
-        let existe = false
-        console.log("VERIFICANDO EMAIL")
-        console.log("USUARIOS:"+ JSON.stringify(usuarios))
-        usuarios.forEach(usuario => {
-              if (usuario.Email == email) {
-                console.log("JA EXISTE ESSE EMAIL!!")
-                existe = true
-                return true
-                }
-            });
-            if (existe==false) {
-                console.log("NAO EXISTE ESSE EMAIL!!")
-                return false 
-            }
-    })
-}
+
 
 
 function validateEmail(email) {
