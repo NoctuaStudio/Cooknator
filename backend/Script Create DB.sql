@@ -230,11 +230,6 @@ INSERT INTO Ingredientes (ID, Nome) VALUES
 
 -- INSERÇÃO DA NOVA RECEITA
 
-INSERT INTO Receitas (Nome, Descricao, ID_Tipo, Imagem, Avaliacao, ID_Usuario, Tamanho, Dieta)
-VALUES
-('Salada de Frango Grelhado', 'Uma salada saudável com pedaços suculentos de frango grelhado.', 1, 'https://3.bp.blogspot.com/-chS1iWhv1RU/WKLNysHmGoI/AAAAAAAAK-4/PSv2Wwc-AZggRHpLyb9UQLzmfthdPEWrwCPcB/w1200/2017016-salada-frango-grelhado.png', 4.6, 1, 'Medio', 'Carnivoro');
-
-
 -- INSERÇÃO DE INGREDIENTES NA RECEITA
 
 INSERT INTO Ingredientes_Da_Receita (ID_Receita, ID_Ingrediente, Quantidade)
