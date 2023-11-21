@@ -2,11 +2,18 @@ const btnAdicionar = document.getElementById("btnAdcionarIngrediente")
 const listaIngredientes = document.getElementById("inputsIngredientes")
 let contador = Number(1);
 
+function getContador(){
+    return Number(this.contador)
+}
+
 btnAdicionar.addEventListener('mouseover', function (event) { 
     console.log("Adicionando ingrediente...")
 })  
 
 btnAdicionar.addEventListener('click', function (event) {
+    let c = contador
+    c = c+1;
+    contador = c
     console.log("Adicionando ingrediente...");
     let divIngredienteERemover = document.createElement("div");
     divIngredienteERemover.setAttribute("id", `divIngredienteERemover${contador}`) ;
@@ -41,10 +48,13 @@ btnAdicionar.addEventListener('click', function (event) {
     divIngredienteERemover.appendChild(divRemover);
     btnRemover.addEventListener('click', function (event) {
         divIngredienteERemover.remove()
+        console.log("contador antes: "+ contador)
+        c=c-1
+        contador=c
+        console.log("contador depois: "+ contador)
     });
     console.log("vai pfv");
     listaIngredientes.appendChild(divIngredienteERemover);
-    contador++;
 })
 
 const formReceita = document.getElementById("formReceita")
@@ -56,18 +66,10 @@ const imagemReceita = document.getElementById("imagemReceita")
 const tamanhoReceita = document.getElementById("tamanhoReceita")
 const dietaReceita = document.getElementById("dietaReceita")
 
+
 formReceita.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Teste -")
-    //let validado3 = true;
-    // validações.forEach(validação => {
-    //     if (!validação) {
-    //         validado2 = false;
-    //     }
-    // });
-    // if (!validado3) {        
-    //     event.stopPropagation()
-    // } else{
         let dados = {
             Nome: nomeReceita.value,
             Descricao: descricaoReceita.value,
@@ -89,6 +91,12 @@ formReceita.addEventListener('submit', function (event) {
     })
     .then(resposta => resposta.json())
     .then(resultado => console.log(resultado))
-    //}
+    
+    console.log("Teste ingredientes - ")
+    fetch("http://localhost:8010/receita/"+ , {
+        method: "GET",
+        headers:{
+            "Content-Type": "application/json"
+        }
 })
 
