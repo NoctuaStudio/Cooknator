@@ -61,19 +61,32 @@ const receitaId = obterParametroDeConsulta('id');
                 const p = document.createElement('p');
                 p.classList.add('card-text');
                 p.setAttribute('id', `ingrediente-receita${i}`);
-                p.textContent = ingredientes[i].ID_Ingrediente
-                console.log(ingredientes[i].Quantidade)
-                //const ingredienteReceitaHTML = document.getElementById("ingrediente-receita")
-                //ingredienteReceitaHTML.textContent = ingredientes[i].Quantidade
+                const divMostrarIngredientes = document.getElementById("mostrarIngredientes")
+                divMostrarIngredientes.appendChild(p);
+                const ingredienteHTML = document.getElementById(`ingrediente-receita${i}`)
+                var nomeIngrediente = buscarIngredienteNome(ingredientes[i].ID_Ingrediente)
+                console.log(nomeIngrediente)
+                ingredienteHTML.textContent = nomeIngrediente +" "+ ingredientes[i].Quantidade
             }
-            
-                
-                
-
-            
-            
         })
 
+        function buscarIngredienteNome(id_ingrediente){
+            
+            fetch("http://localhost:8010/ingrediente/nome/"+id_ingrediente, {
+                method: "GET",          
+                headers:{
+                    "Content-Type": "application/json"
+                }})
+                .then(resposta => resposta.json())
+                .then(ingrediente => {
+                    var nome = ""+ ingrediente[0].Nome
+                    console.log(nome)
+                    return nome
+                })
+            
+            
+        }
+        
 
 
         
