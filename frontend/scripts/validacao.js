@@ -104,24 +104,28 @@ emailCadastro.addEventListener("keyup", () => {
 })
 
 function verificarEmail(email) {
-    let dados = {
-        Email: email
-    }
     return fetch("http://localhost:8010/usuario", {
         method: "GET",
-        body: JSON.stringify(dados),
         headers:{
             "Content-Type": "application/json"
         }
     })
     .then(resposta => resposta.json())
     .then(usuarios =>  {
+        let existe = false
+        console.log("VERIFICANDO EMAIL")
+        console.log("USUARIOS:"+ JSON.stringify(usuarios))
         usuarios.forEach(usuario => {
               if (usuario.Email == email) {
+                console.log("JA EXISTE ESSE EMAIL!!")
+                existe = true
                 return true
                 }
             });
-        return false
+            if (existe==false) {
+                console.log("NAO EXISTE ESSE EMAIL!!")
+                return false 
+            }
     })
 }
 
