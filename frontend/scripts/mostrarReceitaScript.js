@@ -64,9 +64,23 @@ const receitaId = obterParametroDeConsulta('id');
                 const divMostrarIngredientes = document.getElementById("mostrarIngredientes")
                 divMostrarIngredientes.appendChild(p);
                 const ingredienteHTML = document.getElementById(`ingrediente-receita${i}`)
-                var nomeIngrediente = buscarIngredienteNome(ingredientes[i].ID_Ingrediente)
-                console.log(nomeIngrediente)
-                ingredienteHTML.textContent = nomeIngrediente +" "+ ingredientes[i].Quantidade
+                
+
+                fetch("http://localhost:8010/ingrediente/nome/"+ingredientes[i].ID_Ingrediente, {
+                    method: "GET",          
+                    headers:{
+                        "Content-Type": "application/json"
+                    }})
+                    .then(resposta => resposta.json())
+                    .then(ingrediente => {
+                        var nome = ""+ ingrediente[0].Nome
+                        console.log("INGREDIENTE NOME ENVIADO: "+nome)
+                        var nomeIngrediente = nome
+                        console.log("NOME RETORNADO: "+nomeIngrediente)
+                        ingredienteHTML.textContent = nomeIngrediente +" "+ ingredientes[0].Quantidade
+                    })
+
+                
             }
         })
 
@@ -80,7 +94,7 @@ const receitaId = obterParametroDeConsulta('id');
                 .then(resposta => resposta.json())
                 .then(ingrediente => {
                     var nome = ""+ ingrediente[0].Nome
-                    console.log(nome)
+                    console.log("INGREDIENTE NOME ENVIADO: "+nome)
                     return nome
                 })
             
