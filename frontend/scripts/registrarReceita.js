@@ -106,7 +106,9 @@ formReceita.addEventListener('submit', function (event) {
     })
     .then(resposta => resposta.json())
     .then(resultado => console.log(resultado))
-    
+})
+
+formReceita.addEventListener('submit', function (event) {
     console.log("Teste ingredientes - ")
     fetch("http://localhost:8010/receita/ingrediente", {
         method: "GET",
@@ -139,6 +141,13 @@ formReceita.addEventListener('submit', function (event) {
                         fetch("http://localhost:8010/receita/ingrediente", {
                             method: "POST",
                             body: JSON.stringify(dados2),
+                            headers:{
+                                "Content-Type": "application/json"
+                            }}) 
+                        .then(resposta => resposta.json())
+                        .then(resultado => {
+                            console.log("RETORNANDO:" + resultado );
+                            return (resultado);       
                         })
                     })
                 })
