@@ -48,7 +48,7 @@ const receitaId = obterParametroDeConsulta('id');
                 })
             });
 
-    
+    const divMostrarIngredientes = document.getElementById("mostrarIngredientes")
     fetch("http://localhost:8010/ingrediente/"+receitaId, {
         method: "GET",          
         headers:{
@@ -60,7 +60,7 @@ const receitaId = obterParametroDeConsulta('id');
             for(i = 0; i<ingredientes.length; i++){
                 const p = document.createElement('p');
                 p.classList.add('card-text');
-                p.id = 'ingrediente-receita'
+                p.setAttribute('id', `ingrediente-receita${i}`);
                 p.textContent = ingredientes[i].ID_Ingrediente
                 console.log(ingredientes[i].Quantidade)
                 //const ingredienteReceitaHTML = document.getElementById("ingrediente-receita")
