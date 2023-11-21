@@ -20,19 +20,15 @@ import { db } from "../db.js";
     console.log("CHEGOU AQUI:"+req.body.Tipo)
     
 
-    const q = "SELECT * FROM Receitas INNER JOIN Tipo_Receita ON Receitas.ID_Tipo = Tipo_Receita.ID WHERE  (?);";
+    const q = "SELECT * FROM Receitas INNER JOIN Tipo_Receita ON Receitas.ID_Tipo = Tipo_Receita.ID WHERE " +req.body.Tipo;
     
     console.log("QUERY:    " + q)
     
 
-   const values= [
-    req.body.Tipo
-   ]
-
-   console.log ("? == " + values)
 
 
-    db.query(q, values, (erro, data) => {      
+
+    db.query(q, (erro, data) => {      
         if(erro) return res.json("Deu um erro aqui: "+ erro);
         return res.status(200).json(data);
     })
