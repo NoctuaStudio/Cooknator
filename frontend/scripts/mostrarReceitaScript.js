@@ -48,6 +48,31 @@ const receitaId = obterParametroDeConsulta('id');
                 })
             });
 
+    
+    fetch("http://localhost:8010/ingrediente/"+receitaId, {
+        method: "GET",          
+        headers:{
+            "Content-Type": "application/json"
+        }})
+        .then(resposta => resposta.json())
+        .then(ingredientes => {
+            console.log(JSON.stringify(ingredientes));
+            for(i = 0; i<ingredientes.length; i++){
+                const p = document.createElement('p');
+                p.classList.add('card-text');
+                p.id = 'ingrediente-receita'
+                p.textContent = ingredientes[i].ID_Ingrediente
+                console.log(ingredientes[i].Quantidade)
+                //const ingredienteReceitaHTML = document.getElementById("ingrediente-receita")
+                //ingredienteReceitaHTML.textContent = ingredientes[i].Quantidade
+            }
+            
+                
+                
+
+            
+            
+        })
 
 
 
