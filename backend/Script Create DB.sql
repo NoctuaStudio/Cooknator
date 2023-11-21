@@ -144,7 +144,16 @@ Aqueça o Óleo: Em uma panela grande ou frigideira, aqueça o óleo em fogo mé
 Adicione os Temperos: Acrescente o alho e o gengibre à panela e refogue por mais um minuto. Adicione a pasta de curry, a cúrcuma, o cominho e o coentro em pó. Mexa bem para incorporar os temperos.
 Cozinhe o Frango: Adicione os cubos de frango à panela e cozinhe até que fiquem dourados por fora.
 Adicione o Leite de Coco: Despeje o leite de coco na panela, mexendo para combinar os sabores. Deixe ferver e reduza o fogo para médio-baixo. Cozinhe por cerca de 15 a 20 minutos, mexendo ocasionalmente, até que o frango esteja cozido e o molho tenha engrossado.
-Finalize e Sirva: Prove e ajuste os temperos conforme necessário. Se desejar, finalize com um pouco de coentro fresco picado por cima. Sirva o frango ao curry acompanhado de arroz branco, basmati ou naan, se preferir.', '90 Minutos');
+Finalize e Sirva: Prove e ajuste os temperos conforme necessário. Se desejar, finalize com um pouco de coentro fresco picado por cima. Sirva o frango ao curry acompanhado de arroz branco, basmati ou naan, se preferir.', '90 Minutos'),
+
+('Salada de Frango Grelhado', 'Uma salada saudável com pedaços suculentos de frango grelhado.', 8, 'https://3.bp.blogspot.com/-chS1iWhv1RU/WKLNysHmGoI/AAAAAAAAK-4/PSv2Wwc-AZggRHpLyb9UQLzmfthdPEWrwCPcB/w1200/2017016-salada-frango-grelhado.png', 4.5, 1, 'Medio', 'Carnivoro', 'Pré-aqueça a grelha ou frigideira em fogo médio-alto.
+Tempere os peitos de frango com sal, pimenta, azeite de oliva e páprica (se estiver usando). Certifique-se de que o frango está bem coberto pelos temperos.
+Grelhe o frango por cerca de 6-8 minutos de cada lado, ou até que esteja cozido por completo e suculento por dentro. O tempo pode variar de acordo com a espessura do frango.
+Enquanto o frango grelha, prepare os vegetais. Em uma tigela grande, misture as folhas verdes, o pepino, o tomate e a cebola roxa.
+Após grelhar, deixe o frango descansar por alguns minutos antes de cortá-lo em fatias.
+Distribua as fatias de frango sobre a salada de vegetais.
+Finalize com queijo parmesão ralado por cima, se desejar.
+Sirva a salada de frango grelhado com o molho de sua escolha.', '40 Minutos');
 
 -- ADICIONANDO INGREDIENTES
 
@@ -231,28 +240,28 @@ VALUES
 INSERT INTO Ingredientes_Da_Receita (ID_Receita, ID_Ingrediente, Quantidade)
 VALUES
 -- Alface
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Alface' LIMIT 1), '1 maço'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Alface' LIMIT 1), '1 maço'),
 
 -- Tomate
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Tomate' LIMIT 1), '2 unidades'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Tomate' LIMIT 1), '2 unidades'),
 
 -- Peito de Frango
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Peito de Frango' LIMIT 1), '200g'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Peito de Frango' LIMIT 1), '200g'),
 
 -- Cenoura
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Cenoura' LIMIT 1), '1 unidade'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Cenoura' LIMIT 1), '1 unidade'),
 
 -- Queijo Parmesão
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Queijo Parmesão' LIMIT 1), '50g'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Queijo Parmesão' LIMIT 1), '50g'),
 
 -- Molho de Tomate
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Molho de Tomate' LIMIT 1), '2 colheres de sopa'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Molho de Tomate' LIMIT 1), '2 colheres de sopa'),
 
 -- Sal
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Sal' LIMIT 1), 'a gosto'),
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Sal' LIMIT 1), 'a gosto'),
 
 -- Pimenta
-((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado'), (SELECT ID FROM Ingredientes WHERE Nome = 'Pimenta do Reino' LIMIT 1), 'a gosto');
+((SELECT ID FROM Receitas WHERE Nome = 'Salada de Frango Grelhado' LIMIT 1), (SELECT ID FROM Ingredientes WHERE Nome = 'Pimenta do Reino' LIMIT 1), 'a gosto');
 
 SELECT * FROM Receitas;
 
