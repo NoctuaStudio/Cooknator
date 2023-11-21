@@ -1,10 +1,13 @@
 import express from "express";
-import { getIngredientes, getIngredientesReceita, getIngredientesNome} from "./controladores/ingredienteController.js";
+import { getIngredientes, getIngredientesReceita, getIngredientesNome, getIngredientesID, postIngredientesReceita} from "./controladores/ingredienteController.js";
 
 const roteador = express.Router();
 
 roteador.get("/", getIngredientes)
 roteador.get("/:id", getIngredientesReceita)
 roteador.get("/nome/:id", getIngredientesNome)
+roteador.get("/nome/:nome", getIngredientesID)
+
+roteador.post("/", postIngredientesReceita)
 
 export default roteador;

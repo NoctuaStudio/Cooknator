@@ -86,4 +86,18 @@ export const deleteReceitas = (req, res) => {
 }
  
 
-    
+export const getReceitaIngrediente = (req, res) => { 
+    const q = "SELECT * FROM Receitas WHERE Nome = ? AND Descricao = ? AND ID_Tipo = ? AND Imagem = ? AND Tamanho = ? AND Dieta = ?";
+    const values = [
+        req.body.Nome,
+        req.body.Descricao,
+        req.body.Tipo,
+        req.body.Imagem,
+        req.body.Tamanho,
+        req.body.Dieta
+    ]
+    db.query(q, [...values], (erro, data) => {
+        if(erro) return res.json("Deu um erro aqui: "+ erro);
+        return res.status(200).json(data);
+    })
+ }
