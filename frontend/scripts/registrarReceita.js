@@ -163,6 +163,7 @@ formReceita.addEventListener('submit', function (event) {
                             headers:{
                                 "Content-Type": "application/json"
                             }
+                        }) })
                             .then(resposta => resposta.json())
                             .then(ingredientesID => {
                                 //PEGANDO O ID DO INGREDIENTE
@@ -171,6 +172,8 @@ formReceita.addEventListener('submit', function (event) {
                             headers:{
                                 "Content-Type": "application/json"
                             }
+                        })
+                    })
                             .then(resposta => resposta.json())
                             .then(ingredientes => {
                                 IDingrediente = ingredientes[index].ID 
@@ -188,8 +191,13 @@ formReceita.addEventListener('submit', function (event) {
                                     headers:{
                                         "Content-Type": "application/json"
                                     }})
+                                })
                                     .then(resposta => resposta.json())
                                     .then(resultado => console.log(resultado))
+
+                                    .catch(erro => {
+                                        console.error('Erro durante a requisição de ingredientes:', erro);
+                                    });
             
                     /*for(i=1; i<=contador2; i++){
                         console.log("quantidade de ingredientes: "+contador2)
@@ -198,13 +206,8 @@ formReceita.addEventListener('submit', function (event) {
                         const quantidade = document.getElementById(`quantidade${i}`)
 
                     }*/
-                })
-                })     
-            })
-        })
-                    })
-
-        
-    }
+                        }})
                     
-})
+                    
+            
+      
