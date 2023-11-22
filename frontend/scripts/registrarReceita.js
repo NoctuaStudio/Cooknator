@@ -118,8 +118,8 @@ formReceita.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Adicionando ingredientes...")
 
-    const ingredientesAdicionados = document.getElementsByTagName("novoIngrediente")
-    const quantidadesAdicionadas = document.getElementsByTagName("novaQuantidade")
+    const ingredientesAdicionados = document.getElementsByName("novoIngrediente")
+    const quantidadesAdicionadas = document.getElementsByName("novaQuantidade")
    
     console.log("Peguei os ingredientes, exibindo:")
     console.log("Quantidade de ingredientes: " + ingredientesAdicionados.length)
