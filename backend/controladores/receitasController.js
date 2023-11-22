@@ -88,21 +88,3 @@ export const deleteReceitas = (req, res) => {
     })
 }
  
-
-export const postReceitaIngrediente = (req, res) => { 
-    const q = "SELECT * FROM Receitas WHERE Nome = ? AND Descricao = ? AND ID_Tipo = ? AND Imagem = ? AND Tamanho = ? AND Dieta = ?";
-    const values = [
-        req.body.Nome,
-        req.body.Descricao,
-        req.body.Tipo,
-        req.body.Imagem,
-        req.body.Tamanho,
-        req.body.Dieta
-    ]
-    
-    db.query(q, [...values], (erro, data) => {
-        console.log("RODANDO QUERY DE PROCURAR ID RECEITA")
-        if(erro) return res.json("Deu um erro aqui: "+ erro);
-        return res.status(200).json(data);
-    })
- }

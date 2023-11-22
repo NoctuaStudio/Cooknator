@@ -143,94 +143,58 @@ formReceita.addEventListener('submit', function (event) {
         console.log(ingredientesArray[index].value)
         console.log(quantidadesArray[index].value)
 
-        fetch("http://localhost:8010/ingrediente/"+ingredientesArray[index], {
-                    method: "GET",
-                    headers:{
-                        "Content-Type": "application/json"
-                    }
+        fetch("http://localhost:8010/receita/", {
+                        method: "GET",          
+                        headers:{
+                            "Content-Type": "application/json"
+                        }}) 
                     .then(resposta => resposta.json())
-                    .then(ingredientes => {
-                        
-                        
-                        ingredientes[0].ID 
-                        quantidadesArray[index].value
-
-                        let values = {
-                            Nome: nomeReceita.value,
-                            Descricao: descricaoReceita.value,
-                            Tipo: tipoReceita.value,
-                            Imagem: imagemReceita.value,
-                            Tamanho: tamanhoReceita.value,
-                            Dieta: dietaReceita.value,
+                    .then(receitas => {
+                        console.log(JSON.stringify(receitas));
+                        for(i=0; i<receitas.length; i++){
+                            receita = receitas[i]
                         }
+                        console.log('ID da Receita:', receita.ID);
+                        idReceita = receita.ID
+                        quantidade = quantidadesArray[index].value
 
-                         fetch("http://localhost:8010/receita/ingrediente", {
-                          method: "POST",
-                          body: JSON.stringify(values),  
-                          headers:{
-                             "Content-Type": "application/json"
-                         }
-                         .then(resposta => resposta.json())
-                         .then(receitas => { 
-                            console.log("ID DA RECEITA: " + receitas[0].ID)
-
-                         })
-
-
-
-
-
-                    })})})}})
-
-
-    /*
-
-    
-
-    
-    
-            const idReceita = receitas[0].ID
-            console.log("ID da receita: "+idReceita)
-            for(i=1; i<=contador2; i++){
-                console.log("quantidade de ingredientes: "+contador2)
-                const ingrediente = document.getElementById(`ingrediente${i}`)
-                console.log(JSON.stringify(ingrediente))
-                const quantidade = document.getElementById(`quantidade${i}`)
-
-            })
-
-
-                // PEGANDO ID
-                
-
-
-            
-                    
-                        /*
-                        let dados2 = {
-                            ID_Receita: idReceita,
-                            ID_Ingrediente: idIngrediente,
-                            Quantidade: quantidade.value
-                        }
-
-                        fetch("http://localhost:8010/receita/ingrediente", {
-                            method: "POST",
-                            body: JSON.stringify(dados2),
+                        fetch("http://localhost:8010/ingrediente/"+ingredientesArray[index], {
+                            method: "GET",
                             headers:{
                                 "Content-Type": "application/json"
-                            }}) 
-                        .then(resposta => resposta.json())
-                        .then(resultado => {
-                            console.log("RETORNANDO:" + resultado );
-                            return (resultado);       
-                        })
-                    })
-                })
-            }
-            
-            
+                            }
+                            .then(resposta => resposta.json())
+                            .then(ingredientes => {
+                                IDingrediente = ingredientes[index].ID 
+                                
+                                let dados2 = {
+                                    ID_Receita: idReceita,
+                                    ID_Ingrediente: idIngrediente,
+                                    Quantidade: quantidade
+                                }
 
+                                fetch("http://localhost:8010/ingrediente/", {
+                                    method: "POST",
+                                    body: JSON.stringify(dados2),       
+                                    headers:{
+                                        "Content-Type": "application/json"
+                                    }})
+                                    .then(resposta => resposta.json())
+                                    .then(resultado => console.log(resultado))
+            
+                    /*for(i=1; i<=contador2; i++){
+                        console.log("quantidade de ingredientes: "+contador2)
+                        const ingrediente = document.getElementById(`ingrediente${i}`)
+                        console.log(JSON.stringify(ingrediente))
+                        const quantidade = document.getElementById(`quantidade${i}`)
+
+                    }*/
+                    
+            })
         })
-    })
-    */ 
+                    })
 
+        
+    }
+                    
+})
