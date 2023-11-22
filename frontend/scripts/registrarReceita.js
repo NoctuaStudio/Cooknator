@@ -79,7 +79,8 @@ const tipoReceita = document.getElementById("tipoReceita")
 const imagemReceita = document.getElementById("imagemReceita")
 const tamanhoReceita = document.getElementById("tamanhoReceita")
 const dietaReceita = document.getElementById("dietaReceita")
-
+const modoPreparo = document.getElementById("preparaReceita")
+const tempoPreparo = document.getElementById("tempoReceita")
 
 
 formReceita.addEventListener('submit', function (event) {
@@ -98,6 +99,8 @@ formReceita.addEventListener('submit', function (event) {
             //Avaliacao: avaliacaoReceita.value,
             Tamanho: tamanhoReceita.value,
             Dieta: dietaReceita.value,
+            ModoPreparo: modoPreparo.value,
+            Tempo: tempoPreparo.value,
         }
 
         console.log(JSON.stringify(dados))

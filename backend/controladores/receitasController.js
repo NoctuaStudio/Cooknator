@@ -37,7 +37,7 @@ import { db } from "../db.js";
 
  
  export const postReceitas = (req, res) => {
-    const q =  "INSERT INTO Receitas (Nome, Descricao, ID_Tipo, Imagem, Avaliacao, ID_Usuario, Tamanho, Dieta) VALUES(?)";
+    const q =  "INSERT INTO Receitas (Nome, Descricao, ID_Tipo, Imagem, Avaliacao, ID_Usuario, Tamanho, Dieta, Modo_de_Preparo, Tempo_de_Preparo) VALUES(?)";
     const values = [
         req.body.Nome,
         req.body.Descricao,
@@ -47,6 +47,8 @@ import { db } from "../db.js";
         /*ID_Usuario*/5,
         req.body.Tamanho,
         req.body.Dieta,
+        req.body.ModoPreparo,
+        req.body.Tempo,
     ]   
     
     db.query(q, [values], (erro) => {
