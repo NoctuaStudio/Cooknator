@@ -139,65 +139,72 @@ formReceita.addEventListener('submit', function (event) {
     console.log("Quantidade de ingredientes: " + ingredientesArray.length)
     console.log("Quantidade de quantidades: " + quantidadesArray.length)
 
-    for (let index = 0; index < ingredientesArray.length; index++) {
-        console.log(ingredientesArray[index].value)
-        console.log(quantidadesArray[index].value)
+    fetch("http://localhost:8010/receita", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(resposta => resposta.json())
+    .then(receitas => {
+        // Verificando se há pelo menos uma receita
+        if (receitas.length > 0) {
+            // Pegando o ID da última receita adicionada
+            const idReceita = receitas[receitas.length - 1].ID;
 
-        fetch("http://localhost:8010/receita/", {
-                        method: "GET",          
-                        headers:{
-                            "Content-Type": "application/json"
-                        }}) 
-                    .then(resposta => resposta.json())
-                    .then(receitas => {
-                        console.log(JSON.stringify(receitas));
-                        for(i=0; i<receitas.length; i++){
-                            receita = receitas[i]
-                        }
-                        console.log('ID da Receita:', receita.ID);
-                        idReceita = receita.ID
-                        quantidade = quantidadesArray[index].value
+            // Iterando sobre os ingredientes
+            for (let index = 0; index < ingredientesArray.length; index++) {
+                const ingredienteNome = ingredientesArray[index].value;
+                const quantidade = quantidadesArray[index].value;
 
-                        fetch("http://localhost:8010/ingrediente/nome/"+ingredientesArray[index].value, {
-                            method: "GET",
-                            headers:{
-                                "Content-Type": "application/json"
-                            }
-                        }) })
-                            .then(resposta => resposta.json())
-                            .then(ingredientesID => {
-                                //PEGANDO O ID DO INGREDIENTE
-                        fetch("http://localhost:8010/ingrediente/"+ingredientesID[0], {
-                            method: "GET",
-                            headers:{
+                // Obtendo o ID do ingrediente pelo nome
+                fetch("http://localhost:8010/ingrediente/nome/" + ingredienteNome, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(resposta => resposta.json())
+                .then(ingredientesID => {
+                    // Verificando se há pelo menos um ingrediente com esse nome
+                    if (ingredientesID.length > 0) {
+                        const idIngrediente = ingredientesID[0].ID;
+
+                        // Enviando os dados do ingrediente
+                        const dados2 = {
+                            ID_Receita: idReceita,
+                            ID_Ingrediente: idIngrediente,
+                            Quantidade: quantidade
+                        };
+
+                        fetch("http://localhost:8010/ingrediente/", {
+                            method: "POST",
+                            body: JSON.stringify(dados2),
+                            headers: {
                                 "Content-Type": "application/json"
                             }
                         })
-                    })
-                            .then(resposta => resposta.json())
-                            .then(ingredientes => {
-                                IDingrediente = ingredientes[index].ID 
-                                
-                                let dados2 = {
-                                    ID_Receita: idReceita,
-                                    ID_Ingrediente: idIngrediente,
-                                    Quantidade: quantidade
-                                }
-
-                                // 
-                                fetch("http://localhost:8010/ingrediente/", {
-                                    method: "POST",
-                                    body: JSON.stringify(dados2),       
-                                    headers:{
-                                        "Content-Type": "application/json"
-                                    }})
-                                })
-                                    .then(resposta => resposta.json())
-                                    .then(resultado => console.log(resultado))
-
-                                    .catch(erro => {
-                                        console.error('Erro durante a requisição de ingredientes:', erro);
-                                    });
+                        .then(resposta => resposta.json())
+                        .then(resultado => console.log(resultado))
+                        .catch(erro => {
+                            console.error('Erro durante a requisição de ingredientes:', erro);
+                        });
+                    } else {
+                        console.error('Erro: Não foi encontrado um ingrediente com o nome ' + ingredienteNome);
+                    }
+                })
+                .catch(erro => {
+                    console.error('Erro durante a requisição de ingredientesID:', erro);
+                });
+            }
+        } else {
+            console.error('Erro: Nenhuma receita encontrada.');
+        }
+    })
+    .catch(erro => {
+        console.error('Erro durante a requisição de receitas:', erro);
+    });
+});
             
                     /*for(i=1; i<=contador2; i++){
                         console.log("quantidade de ingredientes: "+contador2)
@@ -206,7 +213,7 @@ formReceita.addEventListener('submit', function (event) {
                         const quantidade = document.getElementById(`quantidade${i}`)
 
                     }*/
-                        }})
+                        
                     
                     
             
