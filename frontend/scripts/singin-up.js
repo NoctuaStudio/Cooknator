@@ -112,6 +112,7 @@ let validaçõesLogin = [false, false]
 
 const emailLogin = document.getElementById("emailLogin")
 const senhaLogin = document.getElementById("senhaLogin")
+//const formLogin = document.getElementById("formLogin")
 
 formLogin.addEventListener('submit', function (event) {
     event.preventDefault()
