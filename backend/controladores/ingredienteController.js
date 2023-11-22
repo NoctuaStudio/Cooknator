@@ -27,7 +27,8 @@ import { db } from "../db.js";
 
  export const getIngredientesID = (req, res) => { 
     const q = "SELECT * FROM Ingredientes WHERE Nome = ?";
-    db.query(q, [req.params.id], (erro, data) => {
+    db.query(q, [req.params.nome], (erro, data) => {
+        console.log("CHEGOU NO SELECT DO INGREDIENTE")
         if(erro) return res.json("Deu um erro aqui: "+ erro);
         return res.status(200).json(data);
     })
