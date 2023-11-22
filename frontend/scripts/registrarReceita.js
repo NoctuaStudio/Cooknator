@@ -156,9 +156,10 @@ formReceita.addEventListener('submit', function (event) {
             for (let index = 0; index < ingredientesArray.length; index++) {
                 const ingredienteNome = ingredientesArray[index].value;
                 const quantidade = quantidadesArray[index].value;
+                console.log("NOME DO INGREDIENTE: "+ ingredienteNome)
 
                 // Obtendo o ID do ingrediente pelo nome
-                fetch("http://localhost:8010/ingrediente/nome/" + ingredienteNome, {
+                fetch("http://localhost:8010/ingrediente/nome_ID_Ingrediente/"+ingredienteNome, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"

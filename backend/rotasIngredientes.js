@@ -6,7 +6,7 @@ const roteador = express.Router();
 roteador.get("/", getIngredientes)
 roteador.get("/:id", getIngredientesReceita)
 roteador.get("/nome/:id", getIngredientesNome)
-roteador.get("/nome/:nome", getIngredientesID)
+roteador.get("/nome_ID_Ingrediente/:nome", getIngredientesID)
 
 roteador.post("/", postIngredientesReceita)
 
