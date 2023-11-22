@@ -118,30 +118,74 @@ formReceita.addEventListener('submit', function (event) {
     event.preventDefault()
     console.log("Adicionando ingredientes...")
 
-    const ingredienteChato = document.getElementsById("ingrediente1")
-    const quantidadeChata = document.getElementsById("quantidade1")
+    const ingredienteChato = document.getElementById("ingrediente1")
+    const quantidadeChata = document.getElementById("quantidade1")
+
     const ingredientesAdicionados = document.getElementsByName("novoIngrediente")
     const quantidadesAdicionadas = document.getElementsByName("novaQuantidade")
-    ingredientesAdicionados.push(ingredienteChato)
-    quantidadesAdicionadas.push(quantidadeChata)
+    
+    const ingredientesArray = Array.from(ingredientesAdicionados);
+    const quantidadesArray = Array.from(quantidadesAdicionadas);
+
+
+    ingredientesArray.push(ingredienteChato);
+    quantidadesArray.push(quantidadeChata);
+
 
     console.log("Peguei os ingredientes, exibindo:")
-    console.log("Quantidade de ingredientes: " + ingredientesAdicionados.length)
-    console.log("Quantidade de quantidades: " + quantidadesAdicionadas.length)
-    for (let index = 0; index < ingredientesAdicionados.length; index++) {
-        console.log(ingredientesAdicionados[index].value)
-        console.log(quantidadesAdicionadas[index].value)
-    }
+    console.log("Quantidade de ingredientes: " + ingredientesArray.length)
+    console.log("Quantidade de quantidades: " + quantidadesArray.length)
+
+    for (let index = 0; index < ingredientesArray.length; index++) {
+        console.log(ingredientesArray[index].value)
+        console.log(quantidadesArray[index].value)
+
+        fetch("http://localhost:8010/ingrediente/"+ingredientesArray[index], {
+                    method: "GET",
+                    headers:{
+                        "Content-Type": "application/json"
+                    }
+                    .then(resposta => resposta.json())
+                    .then(ingredientes => {
+                        
+                        
+                        ingredientes[0].ID 
+                        quantidadesArray[index].value
+
+                        let values = {
+                            Nome: nomeReceita.value,
+                            Descricao: descricaoReceita.value,
+                            Tipo: tipoReceita.value,
+                            Imagem: imagemReceita.value,
+                            Tamanho: tamanhoReceita.value,
+                            Dieta: dietaReceita.value,
+                        }
+
+                         fetch("http://localhost:8010/receita/ingrediente", {
+                          method: "POST",
+                          body: JSON.stringify(values),  
+                          headers:{
+                             "Content-Type": "application/json"
+                         }
+                         .then(resposta => resposta.json())
+                         .then(receitas => { 
+                            console.log("ID DA RECEITA: " + receitas[0].ID)
+
+                         })
+
+
+
+
+
+                    })})})}})
+
 
     /*
+
     
-    fetch("http://localhost:8010/receita/ingrediente", {
-        method: "GET",
-        headers:{
-            "Content-Type": "application/json"
-        }
-        .then(resposta => resposta.json())
-        .then(receitas => { 
+
+    
+    
             const idReceita = receitas[0].ID
             console.log("ID da receita: "+idReceita)
             for(i=1; i<=contador2; i++){
@@ -149,15 +193,17 @@ formReceita.addEventListener('submit', function (event) {
                 const ingrediente = document.getElementById(`ingrediente${i}`)
                 console.log(JSON.stringify(ingrediente))
                 const quantidade = document.getElementById(`quantidade${i}`)
-                fetch("http://localhost:8010/ingrediente/"+ ingrediente.value,{
-                    method: "GET",
-                    headers:{
-                        "Content-Type": "application/json"
-                    }
-                    .then(resposta => resposta.json())
-                    .then(ingredientes => {
-                        idIngrediente = ingredientes[0].ID
 
+            })
+
+
+                // PEGANDO ID
+                
+
+
+            
+                    
+                        /*
                         let dados2 = {
                             ID_Receita: idReceita,
                             ID_Ingrediente: idIngrediente,
@@ -184,4 +230,4 @@ formReceita.addEventListener('submit', function (event) {
         })
     })
     */ 
-})
+
