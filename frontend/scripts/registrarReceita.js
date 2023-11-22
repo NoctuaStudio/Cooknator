@@ -158,7 +158,15 @@ formReceita.addEventListener('submit', function (event) {
                         idReceita = receita.ID
                         quantidade = quantidadesArray[index].value
 
-                        fetch("http://localhost:8010/ingrediente/"+ingredientesArray[index], {
+                        fetch("http://localhost:8010/ingrediente/nome/"+ingredientesArray[index].value, {
+                            method: "GET",
+                            headers:{
+                                "Content-Type": "application/json"
+                            }
+                            .then(resposta => resposta.json())
+                            .then(ingredientesID => {
+                                //PEGANDO O ID DO INGREDIENTE
+                        fetch("http://localhost:8010/ingrediente/"+ingredientesID[0], {
                             method: "GET",
                             headers:{
                                 "Content-Type": "application/json"
@@ -173,6 +181,7 @@ formReceita.addEventListener('submit', function (event) {
                                     Quantidade: quantidade
                                 }
 
+                                // 
                                 fetch("http://localhost:8010/ingrediente/", {
                                     method: "POST",
                                     body: JSON.stringify(dados2),       
@@ -189,7 +198,8 @@ formReceita.addEventListener('submit', function (event) {
                         const quantidade = document.getElementById(`quantidade${i}`)
 
                     }*/
-                    
+                })
+                })     
             })
         })
                     })
