@@ -29,12 +29,14 @@ btnAdicionar.addEventListener('click', function (event) {
     let novaQuantidade = document.createElement("input");
     novaQuantidade.setAttribute("type", "text");
     novaQuantidade.setAttribute("id", `quantidade${contador}`);
+    novaQuantidade.setAttribute("name", "novaQuantidade");
     novaQuantidade.classList.add("form-control");
     novaQuantidade.classList.add("rounded-3");
     novaQuantidade.classList.add("col-4");
     let divIngrediente = document.createElement("div");
     divIngrediente.classList.add("col-6");
     let novoIngrediente = document.createElement("input");
+    novoIngrediente.setAttribute("name", "novoIngrediente")
     novoIngrediente.setAttribute("type", "list");
     novoIngrediente.setAttribute("id", `ingrediente${contador}`);
     novoIngrediente.setAttribute("list", `ingredientes`);
@@ -79,9 +81,12 @@ const tamanhoReceita = document.getElementById("tamanhoReceita")
 const dietaReceita = document.getElementById("dietaReceita")
 
 
+
 formReceita.addEventListener('submit', function (event) {
     event.preventDefault()
 
+     
+   
     console.log("contador2: " + contador2)
 
     console.log("Teste -")
@@ -108,11 +113,25 @@ formReceita.addEventListener('submit', function (event) {
     .then(resultado => console.log(resultado))
 })
 
+
 formReceita.addEventListener('submit', function (event) {
-    console.log("Teste ingredientes - ")
+    event.preventDefault()
+    console.log("Adicionando ingredientes...")
+
+    const ingredientesAdicionados = document.getElementsByTagName("novoIngrediente")
+    const quantidadesAdicionadas = document.getElementsByTagName("novaQuantidade")
+   
+    console.log("Peguei os ingredientes, exibindo:")
+    console.log("Quantidade de ingredientes: " + ingredientesAdicionados.length)
+    for (let index = 0; index < ingredientesAdicionados.length; index++) {
+        console.log(ingredientesAdicionados[index])
+        console.log(quantidadesAdicionadas[index])
+    }
+
+    /*
+    
     fetch("http://localhost:8010/receita/ingrediente", {
         method: "GET",
-        body: JSON.stringify(dados),
         headers:{
             "Content-Type": "application/json"
         }
@@ -121,7 +140,9 @@ formReceita.addEventListener('submit', function (event) {
             const idReceita = receitas[0].ID
             console.log("ID da receita: "+idReceita)
             for(i=1; i<=contador2; i++){
+                console.log("quantidade de ingredientes: "+contador2)
                 const ingrediente = document.getElementById(`ingrediente${i}`)
+                console.log(JSON.stringify(ingrediente))
                 const quantidade = document.getElementById(`quantidade${i}`)
                 fetch("http://localhost:8010/ingrediente/"+ ingrediente.value,{
                     method: "GET",
@@ -153,7 +174,9 @@ formReceita.addEventListener('submit', function (event) {
                 })
             }
             
+            
 
         })
     })
+    */ 
 })
