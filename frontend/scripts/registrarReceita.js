@@ -123,9 +123,10 @@ formReceita.addEventListener('submit', function (event) {
    
     console.log("Peguei os ingredientes, exibindo:")
     console.log("Quantidade de ingredientes: " + ingredientesAdicionados.length)
+    console.log("Quantidade de quantidades: " + quantidadesAdicionadas.length)
     for (let index = 0; index < ingredientesAdicionados.length; index++) {
-        console.log(ingredientesAdicionados[index])
-        console.log(quantidadesAdicionadas[index])
+        console.log(ingredientesAdicionados[index].value)
+        console.log(quantidadesAdicionadas[index].value)
     }
 
     /*
